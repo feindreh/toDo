@@ -1,17 +1,16 @@
 export function getValues(inputContainer){
 	//take node return input values
-	console.log("get Values working");
 	let a =inputContainer.querySelectorAll("input");
 
 	a.forEach(element => {
 		console.log(element.value);
 	});
 
+	console.log("getValues not finished");
 }
 
 export function resetValues(inputContainer){
 	//take node reset input values
-	console.log("reset Values working");
 
 	let a =inputContainer.querySelectorAll("input");
 
@@ -19,5 +18,15 @@ export function resetValues(inputContainer){
 		element.value = "";
 	});
 
+}
+
+export function hidePrompt(inputContainer){
+	//hide Prompt
+	inputContainer.style.visibility = "hidden";
+}
+
+export function showPrompt(inputContainer){
+	//show Prompt
+	inputContainer.style.visibility = "visible";
 }
 
