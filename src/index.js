@@ -3,6 +3,7 @@ import {getValues,resetValues,hide,show} from "./headerDir/promptFunctions";
 import toDoFactory from "./toDoFactory";
 import header from "./headerDir/header";
 import content from "./contentDir/content";
+import { displayToDos } from "./displayToDos";
 
 
 const container = document.querySelector("#container");
@@ -30,7 +31,23 @@ closeButton.addEventListener(("click"), () => {
 
 	// reset inputs
 	resetValues(prompt);
+
+	// display toDos
+	displayToDos(Projects,document.querySelector("#content"));
 });
 
 const Projects = [];
 
+
+//setup to test better
+
+function setValues(title,description,dueDate,proxTime){
+	return{title, description, dueDate, proxTime};
+}
+
+Projects.push(toDoFactory(setValues(1,1,1,1)));
+Projects.push(toDoFactory(setValues(2,2,2,2)));
+//Projects.push(toDoFactory(setValues(3,3,3,3)));
+//Projects.push(toDoFactory(setValues(4,4,4,4)));
+
+displayToDos(Projects,document.querySelector("#content"));
