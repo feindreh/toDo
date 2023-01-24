@@ -1,9 +1,9 @@
 import "./style.css";
 import {getValues,resetValues,hide,show} from "./headerDir/promptFunctions";
-import toDoFactory from "./toDoFactory";
+import toDoFactory from "./toDoDir/toDoFactory";
 import header from "./headerDir/header";
 import content from "./contentDir/content";
-import { displayToDos } from "./displayToDos";
+import { displayToDos } from "./toDoDir/displayToDos";
 
 
 const container = document.querySelector("#container");
