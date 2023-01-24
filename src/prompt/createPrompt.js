@@ -1,4 +1,4 @@
-import {divID} from "../functions/creation.js";
+import {divID,divClass} from "../functions/creation.js";
 
 
 export default function createPrompt(){
@@ -13,13 +13,27 @@ export default function createPrompt(){
 		newInput.setAttribute("id",`${name}`);
 		return newInput;
 	}
+	function createLabel(name){
+		let newLabel = document.createElement("label");
+		newLabel.setAttribute("class", "textLabel");
+		newLabel.innerText = `${name}`;
+		return newLabel;
+	}
+
+	function createInputBlock(name){
+		let input = createInput(name);
+		let label = createLabel(name);
+		let block = divClass("inputWrap");
+		block.append(label,input);
+		return block;
+	}
 
 	const promptContainer = divID("newPrompt");
 
-	const title = createInput("title");
-	const description = createInput("description");
-	const dueDate = createInput("dueDate");
-	const proxTime = createInput("proxTime");
+	const title = createInputBlock("title");
+	const description = createInputBlock("description");
+	const dueDate = createInputBlock("dueDate");
+	const proxTime = createInputBlock("proxTime");
 
 	//append elements to container
 
