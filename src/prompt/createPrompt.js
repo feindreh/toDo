@@ -21,13 +21,9 @@ export default function createPrompt(){
 	const dueDate = createInput("dueDate");
 	const proxTime = createInput("proxTime");
 
-	const closeButton = document.createElement("button");
-	closeButton.setAttribute("id","closeButton");
-	closeButton.innerText = "... finishing this to Do!";
-
 	//append elements to container
 
-	promptContainer.append(title,description,dueDate,proxTime,closeButton);
+	promptContainer.append(title,description,dueDate,proxTime);
 	
 	//return the container
 	return promptContainer;
