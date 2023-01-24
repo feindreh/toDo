@@ -3,7 +3,7 @@ import {getValues,resetValues,hide,show} from "./headerDir/promptFunctions";
 import toDoFactory from "./toDoDir/toDoFactory";
 import header from "./headerDir/header";
 import content from "./contentDir/content";
-import { displayToDos } from "./toDoDir/displayToDos";
+import { displayToDos } from "./toDoDir/toDoFunctions";
 
 
 const container = document.querySelector("#container");
