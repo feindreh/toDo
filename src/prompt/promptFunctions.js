@@ -21,12 +21,12 @@ export function resetValues(inputContainer){
 
 }
 
-export function hidePrompt(inputContainer){
+export function hide(inputContainer){
 	//hide Prompt
 	inputContainer.style.visibility = "hidden";
 }
 
-export function showPrompt(inputContainer){
+export function show(inputContainer){
 	//show Prompt
 	inputContainer.style.visibility = "visible";
 }

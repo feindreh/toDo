@@ -1,5 +1,5 @@
 import "./style.css";
-import {getValues,resetValues,hidePrompt,showPrompt} from "./prompt/promptFunctions";
+import {getValues,resetValues,hide,show} from "./prompt/promptFunctions";
 import toDoFactory from "./toDoFactory";
 import header from "./header";
 
@@ -14,12 +14,14 @@ const prompt = document.querySelector("#newPrompt");
 
 newButton.addEventListener(("click"), () => {
 	// show prompt
-	showPrompt(prompt);
+	show(prompt);
+	show(closeButton);
 });
 
 closeButton.addEventListener(("click"), () => {
 	// hide prompt
-	hidePrompt(prompt);
+	hide(prompt);
+	hide(closeButton);
 
 	// get inputs ==> make object ==> push it to Projects
 	Projects.push(toDoFactory(getValues(prompt)));
