@@ -20,9 +20,10 @@ newButton.addEventListener(("click"), () => {
 closeButton.addEventListener(("click"), () => {
 	// hide prompt
 	hidePrompt(prompt);
-	// get inputs
+
+	// get inputs ==> make object ==> push it to Projects
 	Projects.push(toDoFactory(getValues(prompt)));
-	console.log(Projects);
+
 	// reset inputs
 	resetValues(prompt);
 });
