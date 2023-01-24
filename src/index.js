@@ -2,10 +2,12 @@ import "./style.css";
 import {getValues,resetValues,hide,show} from "./headerDir/promptFunctions";
 import toDoFactory from "./toDoFactory";
 import header from "./headerDir/header";
+import content from "./contentDir/content";
 
 
 const container = document.querySelector("#container");
 container.append(header());
+container.append(content());
 
 const newButton = document.querySelector("#newButton");
 const closeButton = document.querySelector("#closeButton");
