@@ -10,19 +10,28 @@ html{
     height:100vh;
 }
 #container{
-    display:flex;
-    flex-direction: column;
-    align-items: flex-start;
+    display:grid;
+    grid-template:200px 1fr / 1fr;
 }
 
 /*Header*/
 #header{
     display: grid;
     grid-template: 200px / 2fr 3fr 2fr;
+    width:100%;
 }
 #newPrompt{
     visibility: hidden;
 }
 #closeButton{
     visibility:hidden;
+}
+
+/*Content*/
+
+#content{
+    place-self:center;
+    display:grid;
+    grid-template-columns: repeat(3,100px);
+    gap:20px;
 }
