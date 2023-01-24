@@ -1,6 +1,7 @@
 import "./style.css";
 import toDoFactory from "./toDoFactory";
 import createPrompt  from "./prompt/createPrompt";
+import {getValues,resetValues} from "./prompt/promptValues";
 
 
 const container = document.querySelector("#container");
@@ -20,7 +21,7 @@ closeButton.addEventListener(("click"), () => {
 	// hide prompt
 	prompt.style.visibility = "hidden";
 	// get inputs
-	console.log("inputs.value");
+	getValues();
 	// reset inputs
-	console.log("reset inputs");
+	resetValues();
 });
