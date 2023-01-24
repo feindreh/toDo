@@ -45,9 +45,14 @@ function setValues(title,description,dueDate,proxTime){
 	return{title, description, dueDate, proxTime};
 }
 
-Projects.push(toDoFactory(setValues(1,1,1,1)));
-Projects.push(toDoFactory(setValues(2,2,2,2)));
-//Projects.push(toDoFactory(setValues(3,3,3,3)));
-//Projects.push(toDoFactory(setValues(4,4,4,4)));
+Projects.push(toDoFactory(setValues("Überleben","Ich sollte versuchen den Tag zu überleben","bis morgen","")));
+Projects.push(toDoFactory(setValues("Nach Hause fahren","mit dem zu nach FT fahren","bis morgen","6h")));
+Projects.push(toDoFactory(setValues("Überleben","Ich sollte versuchen den Tag zu überleben","bis morgen","")));
+Projects.push(toDoFactory(setValues("Nach Hause fahren","mit dem zu nach FT fahren","bis morgen","6h")));
+Projects.push(toDoFactory(setValues("Überleben","Ich sollte versuchen den Tag zu überleben","bis morgen","")));
+Projects.push(toDoFactory(setValues("Nach Hause fahren","mit dem zu nach FT fahren","bis morgen","6h")));
+Projects.push(toDoFactory(setValues("Überleben","Ich sollte versuchen den Tag zu überleben","bis morgen","")));
+Projects.push(toDoFactory(setValues("Nach Hause fahren","mit dem zu nach FT fahren","bis morgen","6h")));
+
 
 displayToDos(Projects,document.querySelector("#content"));
