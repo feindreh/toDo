@@ -21,8 +21,7 @@ closeButton.addEventListener(("click"), () => {
 	// hide prompt
 	hidePrompt(prompt);
 	// get inputs
-	let values = getValues(prompt);
-	Projects.push(toDoFactory(values));
+	Projects.push(toDoFactory(getValues(prompt)));
 	console.log(Projects);
 	// reset inputs
 	resetValues(prompt);
