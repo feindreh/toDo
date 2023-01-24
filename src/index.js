@@ -19,4 +19,8 @@ newButton.addEventListener(("click"), () => {
 closeButton.addEventListener(("click"), () => {
 	// hide prompt
 	prompt.style.visibility = "hidden";
+	// get inputs
+	console.log("inputs.value");
+	// reset inputs
+	console.log("reset inputs");
 });
