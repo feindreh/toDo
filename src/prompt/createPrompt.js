@@ -7,10 +7,21 @@ export default function createPrompt(){
 
 
 	//create elements
+	
+
+	function createInput(name){
+		let newInput = document.createElement("input");
+		newInput.setAttribute("class","textField");
+		newInput.setAttribute("id",`${name}`);
+		return newInput;
+	}
+
 	const promptContainer = divID("newPrompt");
 
-	const input = document.createElement("input");
-	input.setAttribute("class","textField");
+	const title = createInput("title");
+	const description = createInput("description");
+	const dueDate = createInput("dueDate");
+	const proxTime = createInput("proxTime");
 
 	const closeButton = document.createElement("button");
 	closeButton.setAttribute("id","closeButton");
@@ -18,12 +29,7 @@ export default function createPrompt(){
 
 	//append elements to container
 
-	for(let i = 1; i<=4;i++){
-		let newNode = input.cloneNode(true);
-		promptContainer.append(newNode);
-	}
-
-	promptContainer.append(closeButton);
+	promptContainer.append(title,description,dueDate,proxTime,closeButton);
 	
 	//return the container
 	return promptContainer;
