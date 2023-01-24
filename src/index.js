@@ -21,7 +21,7 @@ closeButton.addEventListener(("click"), () => {
 	// hide prompt
 	prompt.style.visibility = "hidden";
 	// get inputs
-	getValues();
+	getValues(prompt);
 	// reset inputs
-	resetValues();
+	resetValues(prompt);
 });
