@@ -1,7 +1,7 @@
-import createPrompt  from "./prompt/createPrompt";
-import createCloseButton from "./prompt/closeButton";
-import createNewButton from "./prompt/newButton";
-import { divID } from "./functions/creation";
+import createPrompt  from "./createPrompt";
+import createCloseButton from "./closeButton";
+import createNewButton from "./newButton";
+import { divID } from "../functions/creation";
 
 
 export default function createHeader(){
