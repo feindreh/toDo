@@ -8,16 +8,15 @@ container.append(createPrompt());
 
 const newButton = document.querySelector("#newButton");
 const closeButton = document.querySelector("#closeButton");
+const prompt = document.querySelector("#newPrompt");
 
 
 newButton.addEventListener(("click"), () => {
 	// show prompt
-	const prompt = document.querySelector("#newPrompt");
 	prompt.style.visibility = "visible";
 });
 
 closeButton.addEventListener(("click"), () => {
-	// show prompt
-	const prompt = document.querySelector("#newPrompt");
+	// hide prompt
 	prompt.style.visibility = "hidden";
 });
