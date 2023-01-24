@@ -1,3 +1,6 @@
+import divID from "./creation.js";
+
 export default function openNewToDoPrompt(){
-	return "a new prompt";
+	const a = divID("it works");
+	return a;
 }
