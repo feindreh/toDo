@@ -1,11 +1,11 @@
 import "./style.css";
-import createPrompt  from "./prompt/createPrompt";
 import {getValues,resetValues,hidePrompt,showPrompt} from "./prompt/promptFunctions";
 import toDoFactory from "./toDoFactory";
+import header from "./header";
 
 
 const container = document.querySelector("#container");
-container.append(createPrompt());
+container.append(header());
 
 const newButton = document.querySelector("#newButton");
 const closeButton = document.querySelector("#closeButton");
