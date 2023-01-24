@@ -20,7 +20,8 @@ closeButton.addEventListener(("click"), () => {
 	// hide prompt
 	hidePrompt(prompt);
 	// get inputs
-	getValues(prompt);
+	let values = getValues(prompt);
+	console.log(values);
 	// reset inputs
 	resetValues(prompt);
 });
