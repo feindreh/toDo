@@ -3,7 +3,9 @@ import toDoFactory from "./toDoFactory";
 import newToDoPrompt  from "./prompt/prompt";
 
 const newButton = document.querySelector("#newButton");
+const container = document.querySelector("#container");
+
 newButton.addEventListener(("click"), () => {
-	const event = newToDoPrompt();
-	console.log(event);
+	const prompt = newToDoPrompt();
+	container.append(prompt);
 });
