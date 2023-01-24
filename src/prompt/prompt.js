@@ -1,7 +1,18 @@
-import {divID} from "../functions/creation.js";
+import {divID,divClass} from "../functions/creation.js";
 
-console.log(divID);
+// toDoFactory = (title,description,dueDate,proxTime,priority = "0") =>
+
 export default function newToDoPrompt(){
-	const a = divID("it works");
-	return a;
+
+	const promptContainer = divID("newPrompt");
+
+	const input = document.createElement("input");
+	input.setAttribute("class","textField");
+
+	for(let i = 1; i<=4;i++){
+		let newNode = input.cloneNode(true);
+		promptContainer.append(newNode);
+	}
+	
+	return promptContainer;
 }
