@@ -1,7 +1,7 @@
 import "./style.css";
-import {getValues,resetValues,hide,show} from "./prompt/promptFunctions";
+import {getValues,resetValues,hide,show} from "./headerDir/promptFunctions";
 import toDoFactory from "./toDoFactory";
-import header from "./header";
+import header from "./headerDir/header";
 
 
 const container = document.querySelector("#container");
