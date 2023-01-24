@@ -1,6 +1,5 @@
-import {divID,divClass} from "../functions/creation.js";
+import {divID} from "../functions/creation.js";
 
-// toDoFactory = (title,description,dueDate,proxTime,priority = "0") =>
 
 export default function createPrompt(){
 	//return the prompt as node
@@ -8,7 +7,6 @@ export default function createPrompt(){
 
 	//create elements
 	
-
 	function createInput(name){
 		let newInput = document.createElement("input");
 		newInput.setAttribute("class","textField");

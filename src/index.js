@@ -1,5 +1,4 @@
 import "./style.css";
-import toDoFactory from "./toDoFactory";
 import createPrompt  from "./prompt/createPrompt";
 import {getValues,resetValues,hidePrompt,showPrompt} from "./prompt/promptFunctions";
 
