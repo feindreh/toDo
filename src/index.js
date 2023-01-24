@@ -33,7 +33,7 @@ closeButton.addEventListener(("click"), () => {
 	resetValues(prompt);
 
 	// display toDos
-	displayToDos(Projects,document.querySelector("#content"));
+	displayToDos(Projects,document.querySelector("#PostIt"));
 });
 
 const Projects = [];
@@ -45,14 +45,14 @@ function setValues(title,description,dueDate,proxTime){
 	return{title, description, dueDate, proxTime};
 }
 
-Projects.push(toDoFactory(setValues("Überleben","Ich sollte versuchen den Tag zu überleben","bis morgen","")));
+Projects.push(toDoFactory(setValues("Überleben","Ich sollte versuchen den Tag zu überleben","bis morgen","2h")));
 Projects.push(toDoFactory(setValues("Nach Hause fahren","mit dem zu nach FT fahren","bis morgen","6h")));
-Projects.push(toDoFactory(setValues("Überleben","Ich sollte versuchen den Tag zu überleben","bis morgen","")));
+Projects.push(toDoFactory(setValues("Überleben","Ich sollte versuchen den Tag zu überleben","bis morgen","2h")));
 Projects.push(toDoFactory(setValues("Nach Hause fahren","mit dem zu nach FT fahren","bis morgen","6h")));
-Projects.push(toDoFactory(setValues("Überleben","Ich sollte versuchen den Tag zu überleben","bis morgen","")));
+Projects.push(toDoFactory(setValues("Überleben","Ich sollte versuchen den Tag zu überleben","bis morgen","2h")));
 Projects.push(toDoFactory(setValues("Nach Hause fahren","mit dem zu nach FT fahren","bis morgen","6h")));
-Projects.push(toDoFactory(setValues("Überleben","Ich sollte versuchen den Tag zu überleben","bis morgen","")));
+Projects.push(toDoFactory(setValues("Überleben","Ich sollte versuchen den Tag zu überleben","bis morgen","2h")));
 Projects.push(toDoFactory(setValues("Nach Hause fahren","mit dem zu nach FT fahren","bis morgen","6h")));
 
 
-displayToDos(Projects,document.querySelector("#content"));
+displayToDos(Projects,document.querySelector("#PostIt"));
