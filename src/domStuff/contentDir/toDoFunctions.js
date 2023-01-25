@@ -7,6 +7,13 @@ export function displayToDos(toDos,node){
 	//clear content
 	deleteChildren(node);
 
+	console.log(toDos);
+
+	if(toDos.lenght === 0){
+		//append example
+		//return
+	}
+
 	for(let toDo of toDos){
 		//loop over toDos to get every toDo
 
