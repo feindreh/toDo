@@ -27,13 +27,24 @@ body{
     grid-template:200px 1fr / 1fr;
 }
 /*Prompt*/
+#blackBox{
+    visibility: hidden;
+    position: absolute;
+    height:100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.418);
+}
+
 #newPrompt{
-    visibility: visible;
+    visibility: hidden;
     position:absolute; 
     top:30%; 
     left:50%; 
     transform:translate(-50%, -50%);
+    z-index: 1;
+    background-color: white;
 }
+
 
 /*Header*/
 

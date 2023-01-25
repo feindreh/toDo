@@ -2,16 +2,19 @@ import "./style.css";
 import {getValues,resetValues,hide,show} from "./domStuff/headerDir/promptFunctions";
 import toDoFactory from "./domStuff/contentDir/toDoFactory";
 import header from "./domStuff/headerDir/header";
-import content from "./domStuff/content";
+import content from "./domStuff/contentDir/content";
 import { displayToDos } from "./domStuff/contentDir/toDoFunctions";
-import createPrompt from "./domStuff/prompDir/createPrompt";
+import createPrompt from "./domStuff/prompDir/newToDo";
+import makeBlackBox from "./domStuff/prompDir/blackBox";
 
 
 const container = document.querySelector("#container");
 
 //append prompts
 const prompt = createPrompt();
-container.append(prompt);
+const blackBox = makeBlackBox();
+
+container.append(prompt,blackBox);
 
 //append actual content
 container.append(header());
@@ -25,12 +28,14 @@ const closeButton = document.querySelector("#closeButton");
 newButton.addEventListener(("click"), () => {
 	// show prompt
 	show(prompt);
+	show(blackBox);
 	show(closeButton);
 });
 
 closeButton.addEventListener(("click"), () => {
 	// hide prompt
 	hide(prompt);
+	hide(blackBox);
 	hide(closeButton);
 
 	// get inputs ==> make object ==> push it to Projects
