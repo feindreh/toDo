@@ -1,7 +1,9 @@
 import Logic from "../objectDir/Logic";
+import { getValues, hide,show} from "../domFunctions/promptFunctions";
+import { createProjectPrompt } from "./promptElement";
+import {deleteChildren, display} from "../domFunctions/toDoFunctions";
 import { projectFactory } from "../objectDir/LogicFuntions";
-import { getValues,resetValues,hide,show} from "../domFunctions/promptFunctions";
-import { displaychildren } from "../domFunctions/toDoFunctions";
+
 
 export function createNewToDoButton(){
 	const Button = document.createElement("button");
@@ -9,13 +11,14 @@ export function createNewToDoButton(){
 	return Button;
 }
 
-export function createNewProjectbutton(){
+export function createNewProjectbutton(parentNode){
+	console.log("newProjectButton",parentNode);
 	const Button = document.createElement("button");
 	Button.innerText = "new Project";
 
 	Button.addEventListener("click",()=>{
 		show(document.querySelector("#blackBox"));
-		show(document.querySelector("#projectPrompt"));
+		document.querySelector("#PostIt").append(createProjectPrompt(parentNode));
 	});
 
 	return Button;
@@ -38,37 +41,28 @@ export function newlogButton(){
 	return logButton;
 }
 
-export function createCloseButton(id){
+export function createCloseButton(parentNode){
+	console.log("createCloseButton",parentNode);
 	const Button = document.createElement("button");
-	Button.setAttribute("id",`${id}`);
+	Button.setAttribute("id","closeItBaby");
 	Button.innerText = "add this to Do";
 
 
 	Button.addEventListener("click",()=>{
-		//hide prompt
+
+		let values = getValues("projectPrompt");
+		console.log(values);
+		let obj = projectFactory(values);
+		console.log(obj);
+
+		parentNode.Projects.push(obj);
+
+		deleteChildren();
 		hide(document.querySelector("#blackBox"));
-		hide(document.querySelector("#projectPrompt"));
-		//get values
-		//make Object
-		//push Object
-		//reset values
+		console.log("display:",parentNode);
+		display(parentNode);
 	});
 
 
 	return Button;
 }
-
-
-
-
-// Button.addEventListener("click",()=>{
-// 	// hide prompt
-// 	hide(projectPrompt);
-// 	hide(blackBox);
-// 	// get inputs ==> make object ==> push it to Projects
-// 	Logic.Projects.push(projectFactory(getValues(projectPrompt)));
-// 	// reset inputs
-// 	resetValues(projectPrompt);
-// 	// display projects
-// 	displaychildren(Logic.Projects,document.querySelector("#PostIt"));
-// });

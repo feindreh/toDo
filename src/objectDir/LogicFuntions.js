@@ -3,14 +3,14 @@
 export function projectFactory(values){
 	let type = "project";
 	let id = `${count}`;
-	let toDos = [];
+	let Projects = [];
 	let title = values.title;
 	let description = values.description;
 	let dueDate = values.dueDate;
 	let priority = 0;
 	let proxTime = values.proxTime;
 	count++;
-	return {title,description,dueDate,priority,proxTime,type,toDos,id};
+	return {title,description,dueDate,priority,proxTime,type,Projects,id};
 }
 
 let count = 0;

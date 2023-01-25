@@ -36,7 +36,6 @@ body{
 }
 
 #toDoPrompt{
-    visibility: hidden;
     position:absolute; 
     top:30%; 
     left:50%; 
@@ -45,7 +44,6 @@ body{
     background-color: white;
 }
 #projectPrompt{
-    visibility: hidden;
     position:absolute; 
     top:30%; 
     left:50%; 

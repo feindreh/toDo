@@ -3,15 +3,17 @@ import { createToDoElement } from "../elementCreationDir/postItCreation";
 
 
 
-export function displaychildren(children,parentNode){
+export function display(parentNode){
 	// display children[array] => parentNode
-	//clear content
-	deleteChildren(parentNode);
 
-	if(children.length === 0){
-		parentNode.append(createDummyElement(parentNode));
-		return;
-	}
+	console.log("display:",parentNode);
+	const children = parentNode.Projects;
+
+	//clear content
+	deleteChildren();
+
+
+		
 
 	for(let toDo of children){
 		//loop over children to get every toDo
@@ -20,12 +22,15 @@ export function displaychildren(children,parentNode){
 		const toDoElement = createToDoElement(toDo);
 
 		//append it
-		parentNode.append(toDoElement);
+		document.querySelector("#PostIt").append(toDoElement);
 	}
+
+	document.querySelector("#PostIt").append(createDummyElement(parentNode));
+	
 }
 
-export function deleteChildren(parentNode){
-
+export function deleteChildren(){
+	const parentNode = document.querySelector("#PostIt");
 	while (parentNode.firstChild) {
 		parentNode.removeChild(parentNode.firstChild);
 	}

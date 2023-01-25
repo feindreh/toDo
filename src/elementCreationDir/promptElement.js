@@ -44,10 +44,10 @@ export function createToDoPrompt(){
 	
 	return promptContainer;
 }
-export function createProjectPrompt(){
+export function createProjectPrompt(parentNode){
 	//return the prompt as node
 
-
+	console.log("newProjectPrompt",parentNode);
 	//create elements
 
 	const promptContainer = divID("projectPrompt");
@@ -57,7 +57,7 @@ export function createProjectPrompt(){
 	const dueDate = createInputBlock("dueDate");
 	const proxTime = createInputBlock("proxTime");
 
-	const closeButton = createCloseButton("projectButton");
+	const closeButton = createCloseButton(parentNode);
 
 	//append elements to container
 	promptContainer.append(title,description,dueDate,proxTime,closeButton);

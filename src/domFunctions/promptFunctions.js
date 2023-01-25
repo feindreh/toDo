@@ -1,6 +1,7 @@
-export function getValues(inputContainer){
+export function getValues(inputID){
 	//take node return input values
-	let inputs =inputContainer.querySelectorAll("input");
+	console.log("getValues of",inputID);
+	let inputs =document.querySelector(`#${inputID}`).querySelectorAll("input");
 	const values = {};
 
 	inputs.forEach(element => {
@@ -10,10 +11,10 @@ export function getValues(inputContainer){
 	return values;
 }
 
-export function resetValues(inputContainer){
+export function resetValues(inputID){
 	//take node reset input values
 
-	let a =inputContainer.querySelectorAll("input");
+	let a =document.querySelector(`#${inputID}`).querySelectorAll("input");
 
 	a.forEach(element => {
 		element.value = "";
