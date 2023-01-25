@@ -1,5 +1,5 @@
-const toDoFactory = (values) => {
-	let type = "toDo";
+const projectFactory = (values) => {
+	let type = "project";
 	let title = values.title;
 	let description = values.description;
 	let dueDate = values.dueDate;
@@ -8,4 +8,4 @@ const toDoFactory = (values) => {
 	return {title,description,dueDate,priority,proxTime,type};
 };
 
-export default toDoFactory;
+export default projectFactory;

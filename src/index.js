@@ -6,6 +6,7 @@ import content from "./domStuff/contentDir/content";
 import { displayToDos } from "./domStuff/contentDir/toDoFunctions";
 import {createToDoPrompt,createProjectPrompt} from "./domStuff/prompDir/newToDo";
 import makeBlackBox from "./domStuff/prompDir/blackBox";
+import projectFactory from "./domStuff/contentDir/projectFactory";
 
 
 const container = document.querySelector("#container");
@@ -42,8 +43,11 @@ projectButton.addEventListener("click",()=>{
 	hide(projectPrompt);
 	hide(blackBox);
 	// get inputs ==> make object ==> push it to Projects
+	Projects.push(projectFactory(getValues(projectPrompt)));
 	// reset inputs
+	resetValues(projectPrompt);
 	// display projects
+	displayToDos(Projects,document.querySelector("#PostIt"));
 });
 
 newToDoButton.addEventListener(("click"), () => {
