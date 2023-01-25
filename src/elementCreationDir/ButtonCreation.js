@@ -60,4 +60,10 @@ export function createCloseButton(parentNode,type){
 
 export function createDiveButton(parentNode){
 	//logix
+	const Button = document.createElement("button");
+	Button.innerText = "dive into project";
+	Button.addEventListener("click",()=>{
+		display(parentNode);
+	});
+	return Button;
 }

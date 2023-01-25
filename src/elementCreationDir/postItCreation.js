@@ -1,17 +1,14 @@
 import { divClass } from "./creation";
 import { display } from "../domFunctions/toDoFunctions";
 import Logic from "../objectDir/Logic";
+import { createDiveButton } from "./ButtonCreation";
 
 export function createToDoElement(toDo){
     
-
+	console.log(toDo);
 	const toDoElement = divClass(`toDoContainer-${toDo.type}`);
-	if(toDo.type === "project"){
-		toDoElement.addEventListener("click",()=>{
-		// display projects
-			display(toDo);
-		});}
-
+	
+	
 	const toDoMark = divClass("toDoMark");
 	toDoMark.innerText = "To Do:";
 
@@ -35,5 +32,10 @@ export function createToDoElement(toDo){
 
 	toDoElement.append(toDoMark,header,description,proxTimeP,proxTime,dueDateP,dueDate);
 	
+	if(toDo.type === "project"){
+		const diveButton = createDiveButton(toDo);
+		toDoElement.append(diveButton);
+	}
+
 	return toDoElement;
 }
