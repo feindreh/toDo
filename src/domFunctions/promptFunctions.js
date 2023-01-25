@@ -1,6 +1,6 @@
 export function getValues(inputID){
 	//take node return input values
-	console.log("getValues of",inputID);
+
 	let inputs =document.querySelector(`#${inputID}`).querySelectorAll("input");
 	const values = {};
 
