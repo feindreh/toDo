@@ -79,7 +79,7 @@ body{
     max-width: 450px;
 }
 
-.toDoContainer-project{
+.toDoContainer-project,.shitIknow{
     border:solid 20px var(--dark);
     background-color: var(--light);
     max-width: 450px;
