@@ -1,18 +1,25 @@
 import "./style.css";
-import {getValues,resetValues,hide,show} from "./headerDir/promptFunctions";
-import toDoFactory from "./toDoDir/toDoFactory";
-import header from "./headerDir/header";
-import content from "./contentDir/content";
-import { displayToDos } from "./toDoDir/toDoFunctions";
+import {getValues,resetValues,hide,show} from "./domStuff/headerDir/promptFunctions";
+import toDoFactory from "./domStuff/contentDir/toDoFactory";
+import header from "./domStuff/headerDir/header";
+import content from "./domStuff/content";
+import { displayToDos } from "./domStuff/contentDir/toDoFunctions";
+import createPrompt from "./domStuff/prompDir/createPrompt";
 
 
 const container = document.querySelector("#container");
+
+//append prompts
+const prompt = createPrompt();
+container.append(prompt);
+
+//append actual content
 container.append(header());
 container.append(content());
 
+
 const newButton = document.querySelector("#newButton");
 const closeButton = document.querySelector("#closeButton");
-const prompt = document.querySelector("#newPrompt");
 
 
 newButton.addEventListener(("click"), () => {
@@ -45,10 +52,10 @@ function setValues(title,description,dueDate,proxTime){
 	return{title, description, dueDate, proxTime};
 }
 
-Projects.push(toDoFactory(setValues("Überleben","Ich sollte versuchen den Tag zu überleben","bis morgen","2h")));
-Projects.push(toDoFactory(setValues("Nach Hause fahren","mit dem zu nach FT fahren","bis morgen","6h")));
-Projects.push(toDoFactory(setValues("Überleben","Ich sollte versuchen den Tag zu überleben","bis morgen","2h")));
-Projects.push(toDoFactory(setValues("Nach Hause fahren","mit dem zu nach FT fahren","bis morgen","6h")));
+// Projects.push(toDoFactory(setValues("Überleben","Ich sollte versuchen den Tag zu überleben","bis morgen","2h")));
+// Projects.push(toDoFactory(setValues("Nach Hause fahren","mit dem zu nach FT fahren","bis morgen","6h")));
+// Projects.push(toDoFactory(setValues("Überleben","Ich sollte versuchen den Tag zu überleben","bis morgen","2h")));
+// Projects.push(toDoFactory(setValues("Nach Hause fahren","mit dem zu nach FT fahren","bis morgen","6h")));
 // Projects.push(toDoFactory(setValues("Überleben","Ich sollte versuchen den Tag zu überleben","bis morgen","2h")));
 // Projects.push(toDoFactory(setValues("Nach Hause fahren","mit dem zu nach FT fahren","bis morgen","6h")));
 // Projects.push(toDoFactory(setValues("Überleben","Ich sollte versuchen den Tag zu überleben","bis morgen","2h")));

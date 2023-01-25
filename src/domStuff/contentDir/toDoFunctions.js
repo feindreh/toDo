@@ -1,4 +1,4 @@
-import { divClass} from "../functions/creation";
+import { divClass} from "../creation";
 
 export function createToDoElement(toDo){
 	//create Element with the struktur of the toDoElement

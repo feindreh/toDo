@@ -26,19 +26,17 @@ body{
     display:grid;
     grid-template:200px 1fr / 1fr;
 }
+/*Prompt*/
+#newPrompt{
+    visibility: visible;
+    position:absolute; 
+    top:30%; 
+    left:50%; 
+    transform:translate(-50%, -50%);
+}
 
 /*Header*/
-#header{
-    display: grid;
-    grid-template: 1fr / 2fr 3fr 2fr;
-    width:100%;
-}
-#newPrompt{
-    visibility: hidden;
-}
-#closeButton{
-    visibility:hidden;
-}
+
 
 /*Content*/
 

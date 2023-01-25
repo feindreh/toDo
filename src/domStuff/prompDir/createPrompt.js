@@ -1,4 +1,4 @@
-import {divID,divClass} from "../functions/creation.js";
+import {divID,divClass} from "../creation.js";
 
 
 export default function createPrompt(){
