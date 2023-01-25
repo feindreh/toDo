@@ -6,6 +6,9 @@ export function createToDoElement(toDo){
 
 	const toDoElement = divClass("toDoContainer");
 
+	const toDoMark = divClass("toDoMark");
+	toDoMark.innerText = "To Do:";
+
 	const header = divClass("toDo-Header");
 	header.innerText = `${toDo.title}`;
 
@@ -24,7 +27,7 @@ export function createToDoElement(toDo){
 	const dueDate = divClass("toDo-dueDate");
 	dueDate.innerText = `${toDo.dueDate}`;
 
-	toDoElement.append(header,description,proxTimeP,proxTime,dueDateP,dueDate);
+	toDoElement.append(toDoMark,header,description,proxTimeP,proxTime,dueDateP,dueDate);
 	
 	return toDoElement;
 }
