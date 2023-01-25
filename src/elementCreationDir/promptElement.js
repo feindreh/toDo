@@ -1,4 +1,4 @@
-import {divID,divClass} from "../creation.js";
+import {divID,divClass} from "./creation.js";
 import createCloseButton from "./closeButton";
 
 function createInput(name){

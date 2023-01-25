@@ -1,5 +1,5 @@
 import { divClass } from "./creation";
-import { displayToDos } from "../domStuffDir/contentDir/toDoFunctions";
+import { displayToDos } from "../domFunctions/toDoFunctions";
 import Logic from "../objectDir/Logic";
 
 export function createToDoElement(toDo){

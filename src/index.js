@@ -1,14 +1,13 @@
 import "./style.css";
-import {getValues,resetValues,hide,show} from "./domStuff/headerDir/promptFunctions";
-import toDoFactory from "./domStuff/contentDir/toDoFactory";
-import header from "./domStuff/headerDir/header";
-import content from "./domStuff/contentDir/content";
-import { displayToDos } from "./domStuff/contentDir/toDoFunctions";
-import {createToDoPrompt,createProjectPrompt} from "./domStuff/prompDir/promptElement";
-import makeBlackBox from "./domStuff/prompDir/blackBox";
-import projectFactory from "./domStuff/contentDir/projectFactory";
-import Projects from "./Logic";
-import Logic from "./Logic";
+import {getValues,resetValues,hide,show} from "./domFunctions/promptFunctions";
+import toDoFactory from "./objectDir/toDoFactory";
+import header from "./elementCreationDir/header";
+import content from "./elementCreationDir/content";
+import { displayToDos } from "./domFunctions/toDoFunctions";
+import {createToDoPrompt,createProjectPrompt} from "./elementCreationDir/promptElement";
+import makeBlackBox from "./elementCreationDir/blackBox";
+import projectFactory from "./objectDir/projectFactory";
+import Logic from "./objectDir/Logic";
 
 
 const container = document.querySelector("#container");

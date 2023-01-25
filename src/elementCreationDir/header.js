@@ -1,7 +1,7 @@
 
 
 import {createNewProjectbutton,escapeProjectButton,newlogButton} from "./ButtonCreation";
-import { divID } from "../creation";
+import { divID } from "./creation";
 
 
 export default function createHeader(){
