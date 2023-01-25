@@ -1,5 +1,5 @@
 import { divClass} from "../creation";
-import { createNewToDoButton } from "../headerDir/newButton";
+import { createNewToDoButton } from "../headerDir/ButtonCreation";
 
 export function createToDoElement(toDo){
 	//create Element with the struktur of the toDoElement
