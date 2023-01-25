@@ -57,3 +57,7 @@ export function createCloseButton(parentNode,type){
 
 	return Button;
 }
+
+export function createDiveButton(parentNode){
+	//logix
+}
