@@ -1,23 +1,17 @@
 import Logic from "../objectDir/Logic";
 import { getValues, hide,show} from "../domFunctions/promptFunctions";
-import { createProjectPrompt } from "./promptElement";
+import { createPrompt } from "./promptElement";
 import {deleteChildren, display} from "../domFunctions/toDoFunctions";
-import { projectFactory } from "../objectDir/LogicFuntions";
+import { projectFactory, toDoFactory } from "../objectDir/LogicFuntions";
 
 
-export function createNewToDoButton(){
+export function createNewProjectbutton(parentNode,type){
 	const Button = document.createElement("button");
-	Button.innerText = "make new toDo";
-	return Button;
-}
-
-export function createNewProjectbutton(parentNode){
-	const Button = document.createElement("button");
-	Button.innerText = "new Project";
+	Button.innerText = `new ${type}`;
 
 	Button.addEventListener("click",()=>{
 		show(document.querySelector("#blackBox"));
-		document.querySelector("#PostIt").append(createProjectPrompt(parentNode));
+		document.querySelector("#PostIt").append(createPrompt(parentNode,type));
 	});
 
 	return Button;
@@ -40,18 +34,18 @@ export function newlogButton(){
 	return logButton;
 }
 
-export function createCloseButton(parentNode){
+export function createCloseButton(parentNode,type){
 	const Button = document.createElement("button");
 	Button.setAttribute("id","closeItBaby");
-	Button.innerText = "add this to Do";
+	Button.innerText = "add it";
 
 
 	Button.addEventListener("click",()=>{
 
-		let values = getValues("projectPrompt");
-
-		let obj = projectFactory(values);
-
+		let values = getValues(parentNode);
+		let obj;
+		if(type==="toDo"){obj = toDoFactory(values);}
+		if(type==="root"||type==="project"){obj= projectFactory(values);}
 
 		parentNode.Projects.push(obj);
 

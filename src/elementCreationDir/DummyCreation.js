@@ -6,9 +6,10 @@ export function createDummyElement(parentNode){
 
 	const container = divClass("shitIknow");
 
-	const newProjectButton = createNewProjectbutton(parentNode);
+	const newProjectButton = createNewProjectbutton(parentNode,"project");
+	const newToDoButton = createNewProjectbutton(parentNode,"toDo");
 
-	container.append(newProjectButton);
+	container.append(newProjectButton,newToDoButton);
 
 	return container;
 

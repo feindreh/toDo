@@ -1,7 +1,9 @@
-export function getValues(inputID){
+export function getValues(parentNode){
 	//take node return input values
-
-	let inputs =document.querySelector(`#${inputID}`).querySelectorAll("input");
+	let inputs;
+	
+	inputs =document.querySelector("#projectPrompt").querySelectorAll("input");
+	
 	const values = {};
 
 	inputs.forEach(element => {

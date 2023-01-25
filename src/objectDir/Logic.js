@@ -1,6 +1,7 @@
 const Logic = {
 	Projects:[],
-	id:"PostIt"
+	id:"PostIt",
+	type:"root",
 };
 
 export default Logic;

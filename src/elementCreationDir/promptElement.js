@@ -20,31 +20,7 @@ function createInputBlock(name){
 	block.append(label,input);
 	return block;
 }
-
-
-export function createToDoPrompt(){
-	//return the prompt as node
-
-
-	//create elements
-	
-	const promptContainer = divID("toDoPrompt");
-
-	const title = createInputBlock("title");
-	const description = createInputBlock("description");
-	const dueDate = createInputBlock("dueDate");
-	const proxTime = createInputBlock("proxTime");
-
-	const closeButton = createCloseButton("toDoButton");
-
-	//append elements to container
-
-	promptContainer.append(title,description,dueDate,proxTime,closeButton);
-	
-	
-	return promptContainer;
-}
-export function createProjectPrompt(parentNode){
+export function createPrompt(parentNode,type){
 	//return the prompt as node
 
 
@@ -57,7 +33,7 @@ export function createProjectPrompt(parentNode){
 	const dueDate = createInputBlock("dueDate");
 	const proxTime = createInputBlock("proxTime");
 
-	const closeButton = createCloseButton(parentNode);
+	const closeButton = createCloseButton(parentNode,type);
 
 	//append elements to container
 	promptContainer.append(title,description,dueDate,proxTime,closeButton);
