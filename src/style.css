@@ -75,10 +75,16 @@ body{
     padding:60px;
 }
 
-.toDoContainer{
+.toDoContainer-toDo{
     border:solid 5px var(--dark);
     background-color: var(--light);
     max-width: 450px;
 }
 
+.toDoContainer-project{
+    border:solid 20px var(--dark);
+    background-color: var(--light);
+    max-width: 450px;
+    font-weight: bold;
+}
 
