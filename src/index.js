@@ -23,19 +23,15 @@ container.append(header());
 container.append(content());
 
 
-const newToDoButton = document.querySelector("#newButton");
-const newProject = document.querySelector("#newProjectButton");
 
-const toDoButton = document.querySelector("#toDoButton");
+const newProject = document.querySelector("#newProjectButton");
 const projectButton = document.querySelector("#projectButton");
 
 
 newProject.addEventListener("click",()=>{
+	//show prompt
 	show(projectPrompt),
-	show(blackBox),
-	console.log("enter data");
-	console.log("close prompt");
-	console.log("display projects?");
+	show(blackBox);
 });
 
 projectButton.addEventListener("click",()=>{
@@ -50,25 +46,16 @@ projectButton.addEventListener("click",()=>{
 	displayToDos(Projects,document.querySelector("#PostIt"));
 });
 
-newToDoButton.addEventListener(("click"), () => {
-	// show prompt
-	show(prompt);
-	show(blackBox);
-});
-
-toDoButton.addEventListener(("click"), () => {
-	// hide prompt
-	hide(prompt);
-	hide(blackBox);
-
-	// get inputs ==> make object ==> push it to Projects
-	Projects.push(toDoFactory(getValues(prompt)));
-
-	// reset inputs
-	resetValues(prompt);
-
-	// display toDos
-	displayToDos(Projects,document.querySelector("#PostIt"));
-});
-
 const Projects = [];
+
+
+// test stuff 
+
+const logButton = document.createElement("button");
+logButton.type = "button";
+logButton.id = "logButton";
+logButton.innerText = "logButton";
+document.querySelector("#header").append(logButton);
+logButton.addEventListener("click", () => {
+	console.log(Projects);
+});
