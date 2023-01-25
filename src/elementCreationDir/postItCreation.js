@@ -6,10 +6,11 @@ export function createToDoElement(toDo){
     
 
 	const toDoElement = divClass(`toDoContainer-${toDo.type}`);
-	toDoElement.addEventListener("click",()=>{
+	if(toDo.type === "project"){
+		toDoElement.addEventListener("click",()=>{
 		// display projects
-		display(toDo);
-	});
+			display(toDo);
+		});}
 
 	const toDoMark = divClass("toDoMark");
 	toDoMark.innerText = "To Do:";

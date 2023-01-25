@@ -6,14 +6,13 @@ import { createToDoElement } from "../elementCreationDir/postItCreation";
 export function display(parentNode){
 	// display children[array] => parentNode
 
-	const children = parentNode.Projects;
 
+	const children = parentNode.Projects;
+	
 	//clear content
 	deleteChildren();
 
-
-		
-
+	//display stuff
 	for(let toDo of children){
 		//loop over children to get every toDo
 
