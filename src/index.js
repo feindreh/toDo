@@ -1,12 +1,11 @@
 import "./style.css";
 import {getValues,resetValues,hide,show} from "./domFunctions/promptFunctions";
-import toDoFactory from "./objectDir/toDoFactory";
+import {toDoFactory,projectFactory} from "./objectDir/LogicFuntions";
 import header from "./elementCreationDir/header";
 import content from "./elementCreationDir/content";
 import { displayToDos } from "./domFunctions/toDoFunctions";
 import {createToDoPrompt,createProjectPrompt} from "./elementCreationDir/promptElement";
 import makeBlackBox from "./elementCreationDir/blackBox";
-import projectFactory from "./objectDir/projectFactory";
 import Logic from "./objectDir/Logic";
 
 
