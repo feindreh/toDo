@@ -8,9 +8,8 @@ export function displayToDos(toDos,node){
 	//clear content
 	deleteChildren(node);
 
-	console.log(toDos);
 	if(toDos.length === 0){
-		createDummyElement();
+		node.append(createDummyElement());
 		return;
 	}
 

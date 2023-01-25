@@ -26,7 +26,7 @@ export function newlogButton(){
 	logButton.id = "logButton";
 	logButton.innerText = "logButton";
 	logButton.addEventListener("click", () => {
-		console.log(Logic.Projects);
+		console.log(Logic);
 	});
 	return logButton;
 }
