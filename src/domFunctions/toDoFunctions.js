@@ -1,3 +1,4 @@
+import { createDummyElement } from "../elementCreationDir/DummyCreation";
 import { createToDoElement } from "../elementCreationDir/postItCreation";
 
 
@@ -8,10 +9,9 @@ export function displayToDos(toDos,node){
 	deleteChildren(node);
 
 	console.log(toDos);
-
-	if(toDos.lenght === 0){
-		//append example
-		//return
+	if(toDos.length === 0){
+		createDummyElement();
+		return;
 	}
 
 	for(let toDo of toDos){

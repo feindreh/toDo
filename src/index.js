@@ -47,7 +47,7 @@ addNewProjectButton.addEventListener("click",()=>{
 	displayToDos(Logic.Projects,document.querySelector("#PostIt"));
 });
 
-
+displayToDos(Logic.Projects,document.querySelector("#PostIt"));
 
 
 // test stuff 

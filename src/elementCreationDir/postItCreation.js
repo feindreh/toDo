@@ -3,7 +3,6 @@ import { displayToDos } from "../domFunctions/toDoFunctions";
 import Logic from "../objectDir/Logic";
 
 export function createToDoElement(toDo){
-	//create Element with the struktur of the toDoElement
     
 
 	const toDoElement = divClass(`toDoContainer-${toDo.type}`);
