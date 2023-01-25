@@ -26,3 +26,7 @@ export function toDoFactory(values){
 }
 
 //push it to Projects
+
+export function addToProjects(Object,target){
+	console.log(Object,target);
+}

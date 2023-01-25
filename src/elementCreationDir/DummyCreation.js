@@ -1,20 +1,18 @@
 import { divClass } from "./creation";
 import { displayToDos } from "../domFunctions/toDoFunctions";
+import{createNewProjectbutton} from "./ButtonCreation";
 
-
-export function createDummyElement(){
+export function createDummyElement(parentNode){
    
+	console.log(parentNode);
 
 	const container = divClass("shitIknow");
 
-	const newToDoButton = document.createElement("button");
-	newToDoButton.innerText = "New To Do";
+	const newProjectButton = createNewProjectbutton();
 
-	const newProjectButton = document.createElement("button");
-	newProjectButton.innerText = "New Project";
-
-	container.append(newToDoButton,newProjectButton);
+	container.append(newProjectButton);
 
 	return container;
 
 }
+

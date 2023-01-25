@@ -9,13 +9,11 @@ export default function createHeader(){
 	const header = divID("header");
 
 
-
-	const newProjectButton = createNewProjectbutton();
 	const escapeButton = escapeProjectButton();
 	const logButton = newlogButton();
 	
 
-	header.append(newProjectButton,escapeButton,logButton);
+	header.append(escapeButton,logButton);
 
 	return header;
 }

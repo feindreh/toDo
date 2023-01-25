@@ -1,5 +1,5 @@
 import {divID,divClass} from "./creation.js";
-import createCloseButton from "./closeButton";
+import {createCloseButton} from "./ButtonCreation";
 
 function createInput(name){
 	let newInput = document.createElement("input");

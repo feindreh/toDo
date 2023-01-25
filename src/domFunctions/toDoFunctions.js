@@ -3,30 +3,30 @@ import { createToDoElement } from "../elementCreationDir/postItCreation";
 
 
 
-export function displayToDos(toDos,node){
-	// display toDos[array] => node
+export function displaychildren(children,parentNode){
+	// display children[array] => parentNode
 	//clear content
-	deleteChildren(node);
+	deleteChildren(parentNode);
 
-	if(toDos.length === 0){
-		node.append(createDummyElement());
+	if(children.length === 0){
+		parentNode.append(createDummyElement(parentNode));
 		return;
 	}
 
-	for(let toDo of toDos){
-		//loop over toDos to get every toDo
+	for(let toDo of children){
+		//loop over children to get every toDo
 
 		//create a toDoElement
 		const toDoElement = createToDoElement(toDo);
 
 		//append it
-		node.append(toDoElement);
+		parentNode.append(toDoElement);
 	}
 }
 
-export function deleteChildren(node){
+export function deleteChildren(parentNode){
 
-	while (node.firstChild) {
-		node.removeChild(node.firstChild);
+	while (parentNode.firstChild) {
+		parentNode.removeChild(parentNode.firstChild);
 	}
 }

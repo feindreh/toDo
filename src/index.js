@@ -3,7 +3,7 @@ import {getValues,resetValues,hide,show} from "./domFunctions/promptFunctions";
 import {toDoFactory,projectFactory} from "./objectDir/LogicFuntions";
 import header from "./elementCreationDir/header";
 import content from "./elementCreationDir/content";
-import { displayToDos } from "./domFunctions/toDoFunctions";
+import {displaychildren } from "./domFunctions/toDoFunctions";
 import {createToDoPrompt,createProjectPrompt} from "./elementCreationDir/promptElement";
 import makeBlackBox from "./elementCreationDir/blackBox";
 import Logic from "./objectDir/Logic";
@@ -25,28 +25,7 @@ container.append(content());
 
 
 
-
-const newProject = document.querySelector("#newProjectButton");
-newProject.addEventListener("click",()=>{
-	//show prompt
-	show(projectPrompt),
-	show(blackBox);
-});
-
-const addNewProjectButton = document.querySelector("#projectButton");
-addNewProjectButton.addEventListener("click",()=>{
-	// hide prompt
-	hide(projectPrompt);
-	hide(blackBox);
-	// get inputs ==> make object ==> push it to Projects
-	Logic.Projects.push(projectFactory(getValues(projectPrompt)));
-	// reset inputs
-	resetValues(projectPrompt);
-	// display projects
-	displayToDos(Logic.Projects,document.querySelector("#PostIt"));
-});
-
-displayToDos(Logic.Projects,document.querySelector("#PostIt"));
+displaychildren(Logic.Projects,document.querySelector("#PostIt"));
 
 
 // test stuff 
