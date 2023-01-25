@@ -1,6 +1,6 @@
-import { divClass } from "../creation";
-import { displayToDos } from "./toDoFunctions";
-import Logic from "../../Logic";
+import { divClass } from "./creation";
+import { displayToDos } from "../domStuffDir/contentDir/toDoFunctions";
+import Logic from "../objectDir/Logic";
 
 export function createToDoElement(toDo){
 	//create Element with the struktur of the toDoElement

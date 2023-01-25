@@ -1,4 +1,4 @@
-import Logic from "../../Logic";
+import Logic from "../objectDir/Logic";
 
 export function createNewToDoButton(){
 	const Button = document.createElement("button");
@@ -15,7 +15,6 @@ export function createNewProjectbutton(){
 }
 
 export function escapeProjectButton(){
-	//logic
 	const Button = document.createElement("button");
 	Button.innerText = "escapeProject";
 	return Button;
