@@ -45,7 +45,13 @@ export function createCloseButton(id){
 
 
 	Button.addEventListener("click",()=>{
-		console.log("close");
+		//hide prompt
+		hide(document.querySelector("#blackBox"));
+		hide(document.querySelector("#projectPrompt"));
+		//get values
+		//make Object
+		//push Object
+		//reset values
 	});
 
 
