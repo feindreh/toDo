@@ -7,7 +7,7 @@ export function createNewToDoButton(){
 
 export function createNewProjectbutton(){
 	const projectButton = document.createElement("button");
-	projectButton.setAttribute("id","projectButton");
+	projectButton.setAttribute("id","newProjectButton");
 	projectButton.innerText = "new Project";
 	return projectButton;
 }

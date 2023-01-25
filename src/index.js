@@ -23,8 +23,8 @@ container.append(content());
 
 
 const newToDoButton = document.querySelector("#newButton");
-const closeButton = document.querySelector("#closeButton");
-const newProject = document.querySelector("#projectButton");
+const closeButton = document.querySelector("#toDoButton");
+const newProject = document.querySelector("#newProjectButton");
 
 
 newProject.addEventListener("click",()=>{

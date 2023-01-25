@@ -13,7 +13,6 @@ function createLabel(name){
 	newLabel.innerText = `${name}`;
 	return newLabel;
 }
-
 function createInputBlock(name){
 	let input = createInput(name);
 	let label = createLabel(name);
@@ -36,7 +35,7 @@ export function createToDoPrompt(){
 	const dueDate = createInputBlock("dueDate");
 	const proxTime = createInputBlock("proxTime");
 
-	const closeButton = createCloseButton();
+	const closeButton = createCloseButton("toDoButton");
 
 	//append elements to container
 
@@ -45,7 +44,6 @@ export function createToDoPrompt(){
 	
 	return promptContainer;
 }
-
 export function createProjectPrompt(){
 	//return the prompt as node
 
@@ -59,8 +57,10 @@ export function createProjectPrompt(){
 	const dueDate = createInputBlock("dueDate");
 	const proxTime = createInputBlock("proxTime");
 
+	const closeButton = createCloseButton("projectButton");
+
 	//append elements to container
-	promptContainer.append(title,description,dueDate,proxTime);
+	promptContainer.append(title,description,dueDate,proxTime,closeButton);
 	//return the container
 	return promptContainer;
 }
