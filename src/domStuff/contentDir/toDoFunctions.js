@@ -4,7 +4,7 @@ export function createToDoElement(toDo){
 	//create Element with the struktur of the toDoElement
     
 
-	const toDoElement = divClass("toDoContainer");
+	const toDoElement = divClass(`toDoContainer-${toDo.type}`);
 
 	const toDoMark = divClass("toDoMark");
 	toDoMark.innerText = "To Do:";
