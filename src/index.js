@@ -7,9 +7,11 @@ import { displayToDos } from "./domStuff/contentDir/toDoFunctions";
 import {createToDoPrompt,createProjectPrompt} from "./domStuff/prompDir/promptElement";
 import makeBlackBox from "./domStuff/prompDir/blackBox";
 import projectFactory from "./domStuff/contentDir/projectFactory";
+import Projects from "./Projects";
 
 
 const container = document.querySelector("#container");
+
 
 //append prompts
 const projectPrompt = createProjectPrompt();
@@ -45,18 +47,11 @@ addNewProjectButton.addEventListener("click",()=>{
 	displayToDos(Projects,document.querySelector("#PostIt"));
 });
 
-const Projects = [];
+
 
 
 // test stuff 
 
-const logButton = document.createElement("button");
-logButton.type = "button";
-logButton.id = "logButton";
-logButton.innerText = "logButton";
-document.querySelector("#header").append(logButton);
-logButton.addEventListener("click", () => {
-	console.log(Projects);
-});
+
 
 
