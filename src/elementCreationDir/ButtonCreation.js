@@ -12,7 +12,6 @@ export function createNewToDoButton(){
 }
 
 export function createNewProjectbutton(parentNode){
-	console.log("newProjectButton",parentNode);
 	const Button = document.createElement("button");
 	Button.innerText = "new Project";
 
@@ -42,7 +41,6 @@ export function newlogButton(){
 }
 
 export function createCloseButton(parentNode){
-	console.log("createCloseButton",parentNode);
 	const Button = document.createElement("button");
 	Button.setAttribute("id","closeItBaby");
 	Button.innerText = "add this to Do";
@@ -51,15 +49,14 @@ export function createCloseButton(parentNode){
 	Button.addEventListener("click",()=>{
 
 		let values = getValues("projectPrompt");
-		console.log(values);
+
 		let obj = projectFactory(values);
-		console.log(obj);
+
 
 		parentNode.Projects.push(obj);
 
 		deleteChildren();
 		hide(document.querySelector("#blackBox"));
-		console.log("display:",parentNode);
 		display(parentNode);
 	});
 

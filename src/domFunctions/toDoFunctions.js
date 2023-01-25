@@ -6,7 +6,6 @@ import { createToDoElement } from "../elementCreationDir/postItCreation";
 export function display(parentNode){
 	// display children[array] => parentNode
 
-	console.log("display:",parentNode);
 	const children = parentNode.Projects;
 
 	//clear content
@@ -26,7 +25,7 @@ export function display(parentNode){
 	}
 
 	document.querySelector("#PostIt").append(createDummyElement(parentNode));
-	
+
 }
 
 export function deleteChildren(){

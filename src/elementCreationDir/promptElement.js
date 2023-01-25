@@ -47,7 +47,7 @@ export function createToDoPrompt(){
 export function createProjectPrompt(parentNode){
 	//return the prompt as node
 
-	console.log("newProjectPrompt",parentNode);
+
 	//create elements
 
 	const promptContainer = divID("projectPrompt");
