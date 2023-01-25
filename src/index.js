@@ -45,14 +45,12 @@ newToDoButton.addEventListener(("click"), () => {
 	// show prompt
 	show(prompt);
 	show(blackBox);
-	show(closeButton);
 });
 
 toDoButton.addEventListener(("click"), () => {
 	// hide prompt
 	hide(prompt);
 	hide(blackBox);
-	hide(closeButton);
 
 	// get inputs ==> make object ==> push it to Projects
 	Projects.push(toDoFactory(getValues(prompt)));
