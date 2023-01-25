@@ -23,8 +23,10 @@ container.append(content());
 
 
 const newToDoButton = document.querySelector("#newButton");
-const closeButton = document.querySelector("#toDoButton");
 const newProject = document.querySelector("#newProjectButton");
+
+const toDoButton = document.querySelector("#toDoButton");
+const projectButton = document.querySelector("#projectButton");
 
 
 newProject.addEventListener("click",()=>{
@@ -35,6 +37,10 @@ newProject.addEventListener("click",()=>{
 	console.log("display projects?");
 });
 
+projectButton.addEventListener("click",()=>{
+	console.log("close Project");
+});
+
 newToDoButton.addEventListener(("click"), () => {
 	// show prompt
 	show(prompt);
@@ -42,7 +48,7 @@ newToDoButton.addEventListener(("click"), () => {
 	show(closeButton);
 });
 
-closeButton.addEventListener(("click"), () => {
+toDoButton.addEventListener(("click"), () => {
 	// hide prompt
 	hide(prompt);
 	hide(blackBox);
