@@ -8,6 +8,6 @@ export function createNewToDoButton(){
 export function createNewProjectbutton(){
 	const projectButton = document.createElement("button");
 	projectButton.setAttribute("id","projectButton");
-	projectButton.innerText = "make new toDo";
+	projectButton.innerText = "new Project";
 	return projectButton;
 }
