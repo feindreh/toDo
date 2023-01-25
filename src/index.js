@@ -4,17 +4,18 @@ import toDoFactory from "./domStuff/contentDir/toDoFactory";
 import header from "./domStuff/headerDir/header";
 import content from "./domStuff/contentDir/content";
 import { displayToDos } from "./domStuff/contentDir/toDoFunctions";
-import createPrompt from "./domStuff/prompDir/newToDo";
+import {createToDoPrompt,createProjectPrompt} from "./domStuff/prompDir/newToDo";
 import makeBlackBox from "./domStuff/prompDir/blackBox";
 
 
 const container = document.querySelector("#container");
 
 //append prompts
-const prompt = createPrompt();
+const projectPrompt = createProjectPrompt();
+const prompt = createToDoPrompt();
 const blackBox = makeBlackBox();
 
-container.append(prompt,blackBox);
+container.append(prompt,projectPrompt,blackBox);
 
 //append actual content
 container.append(header());
@@ -27,7 +28,8 @@ const newProject = document.querySelector("#projectButton");
 
 
 newProject.addEventListener("click",()=>{
-	console.log("show project prompt");
+	show(projectPrompt),
+	show(blackBox),
 	console.log("enter data");
 	console.log("close prompt");
 	console.log("display projects?");
