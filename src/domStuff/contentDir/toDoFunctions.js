@@ -4,7 +4,6 @@ import { createToDoElement } from "./postItCreation";
 
 export function displayToDos(toDos,node){
 	// display toDos[array] => node
-	
 	//clear content
 	deleteChildren(node);
 

@@ -1,4 +1,4 @@
-import Projects from "../../Projects";
+import Logic from "../../Logic";
 
 export function createNewToDoButton(){
 	const Button = document.createElement("button");
@@ -27,7 +27,7 @@ export function newlogButton(){
 	logButton.id = "logButton";
 	logButton.innerText = "logButton";
 	logButton.addEventListener("click", () => {
-		console.log(Projects);
+		console.log(Logic.Projects);
 	});
 	return logButton;
 }

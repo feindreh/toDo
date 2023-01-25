@@ -7,7 +7,8 @@ import { displayToDos } from "./domStuff/contentDir/toDoFunctions";
 import {createToDoPrompt,createProjectPrompt} from "./domStuff/prompDir/promptElement";
 import makeBlackBox from "./domStuff/prompDir/blackBox";
 import projectFactory from "./domStuff/contentDir/projectFactory";
-import Projects from "./Projects";
+import Projects from "./Logic";
+import Logic from "./Logic";
 
 
 const container = document.querySelector("#container");
@@ -40,11 +41,11 @@ addNewProjectButton.addEventListener("click",()=>{
 	hide(projectPrompt);
 	hide(blackBox);
 	// get inputs ==> make object ==> push it to Projects
-	Projects.push(projectFactory(getValues(projectPrompt)));
+	Logic.Projects.push(projectFactory(getValues(projectPrompt)));
 	// reset inputs
 	resetValues(projectPrompt);
 	// display projects
-	displayToDos(Projects,document.querySelector("#PostIt"));
+	displayToDos(Logic.Projects,document.querySelector("#PostIt"));
 });
 
 

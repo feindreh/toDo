@@ -1,5 +1,6 @@
 import { divClass } from "../creation";
-
+import { displayToDos } from "./toDoFunctions";
+import Logic from "../../Logic";
 
 export function createToDoElement(toDo){
 	//create Element with the struktur of the toDoElement
@@ -7,8 +8,8 @@ export function createToDoElement(toDo){
 
 	const toDoElement = divClass(`toDoContainer-${toDo.type}`);
 	toDoElement.addEventListener("click",()=>{
-		console.log("container");
-		console.log("toDos");
+		// display projects
+		displayToDos(Logic.Projects[toDo.id].toDos,document.querySelector("#PostIt"));
 	});
 
 	const toDoMark = divClass("toDoMark");
