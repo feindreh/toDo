@@ -1,13 +1,20 @@
 export function createNewToDoButton(){
-	const newButton = document.createElement("button");
-	newButton.setAttribute("id","newButton");
-	newButton.innerText = "make new toDo";
-	return newButton;
+	const Button = document.createElement("button");
+	Button.setAttribute("id","newButton");
+	Button.innerText = "make new toDo";
+	return Button;
 }
 
 export function createNewProjectbutton(){
-	const projectButton = document.createElement("button");
-	projectButton.setAttribute("id","newProjectButton");
-	projectButton.innerText = "new Project";
-	return projectButton;
+	const Button = document.createElement("button");
+	Button.setAttribute("id","newProjectButton");
+	Button.innerText = "new Project";
+	return Button;
+}
+
+export function escapeProjectButton(){
+	//logic
+	const Button = document.createElement("button");
+	Button.innerText = "escapeProject";
+	return Button;
 }
