@@ -59,3 +59,5 @@ document.querySelector("#header").append(logButton);
 logButton.addEventListener("click", () => {
 	console.log(Projects);
 });
+
+
