@@ -35,7 +35,7 @@ body{
     background-color: rgba(0, 0, 0, 0.418);
 }
 
-#newPrompt{
+#toDoPrompt{
     visibility: hidden;
     position:absolute; 
     top:30%; 
@@ -44,7 +44,15 @@ body{
     z-index: 1;
     background-color: white;
 }
-
+#projectPrompt{
+    visibility: hidden;
+    position:absolute; 
+    top:30%; 
+    left:50%; 
+    transform:translate(-50%, -50%);
+    z-index: 1;
+    background-color: white;
+}
 
 /*Header*/
 
