@@ -1,17 +1,19 @@
 
 
-import createNewButton from "./newButton";
-import { divID } from "../creation";
+import {createNewToDoButton,createNewProjectbutton} from "./newButton";
+import { divClass, divID } from "../creation";
 
 
 export default function createHeader(){
 
 	const header = divID("header");
 
-	const newButton = createNewButton();
+	const newToDoButton = createNewToDoButton();
+
+	const newProjectButton = createNewProjectbutton();
 	
 
-	header.append(newButton);
+	header.append(newToDoButton,newProjectButton);
 
 	return header;
 }
