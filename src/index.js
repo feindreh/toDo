@@ -38,7 +38,12 @@ newProject.addEventListener("click",()=>{
 });
 
 projectButton.addEventListener("click",()=>{
-	console.log("close Project");
+	// hide prompt
+	hide(projectPrompt);
+	hide(blackBox);
+	// get inputs ==> make object ==> push it to Projects
+	// reset inputs
+	// display projects
 });
 
 newToDoButton.addEventListener(("click"), () => {
