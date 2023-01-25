@@ -1,6 +1,4 @@
 import "./style.css";
-import {getValues,resetValues,hide,show} from "./domFunctions/promptFunctions";
-import {toDoFactory,projectFactory} from "./objectDir/LogicFuntions";
 import header from "./elementCreationDir/header";
 import content from "./elementCreationDir/content";
 import {displaychildren } from "./domFunctions/toDoFunctions";
