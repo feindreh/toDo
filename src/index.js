@@ -21,11 +21,19 @@ container.append(header());
 container.append(content());
 
 
-const newButton = document.querySelector("#newButton");
+const newToDoButton = document.querySelector("#newButton");
 const closeButton = document.querySelector("#closeButton");
+const newProject = document.querySelector("#projectButton");
 
 
-newButton.addEventListener(("click"), () => {
+newProject.addEventListener("click",()=>{
+	console.log("show project prompt");
+	console.log("enter data");
+	console.log("close prompt");
+	console.log("display projects?");
+});
+
+newToDoButton.addEventListener(("click"), () => {
 	// show prompt
 	show(prompt);
 	show(blackBox);
