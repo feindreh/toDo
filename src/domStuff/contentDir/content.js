@@ -1,4 +1,4 @@
-import { divClass, divID } from "./creation";
+import { divClass, divID } from "../creation";
 
 export default function createContent(){
 

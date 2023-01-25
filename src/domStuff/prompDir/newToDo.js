@@ -1,4 +1,5 @@
 import {divID,divClass} from "../creation.js";
+import createCloseButton from "../prompDir/closeButton";
 
 
 export default function createPrompt(){
@@ -35,9 +36,11 @@ export default function createPrompt(){
 	const dueDate = createInputBlock("dueDate");
 	const proxTime = createInputBlock("proxTime");
 
+	const closeButton = createCloseButton();
+
 	//append elements to container
 
-	promptContainer.append(title,description,dueDate,proxTime);
+	promptContainer.append(title,description,dueDate,proxTime,closeButton);
 	
 	//return the container
 	return promptContainer;
