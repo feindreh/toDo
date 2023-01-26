@@ -10,7 +10,7 @@ export function display(parentNode){
 
 
 	const children = parentNode.Projects;
-	
+	children.sort((a,b) => b.priority - a.priority);
 	//clear content
 	deleteChildren(document.querySelector("#PostIt"));
 
