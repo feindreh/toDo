@@ -37,10 +37,15 @@ export function goBack(){
 	buildQueue.shift();
 
 	let buildObject = find(Logic,buildQueue);
-	console.log("buildObject = ",buildObject);
 	Logic.queue.pop();
 	display(buildObject);
-	
+}
+ 
+export function refresh(){
+	const buildQueue = Array.from(Logic.queue);
+	buildQueue.shift();
+	let buildObject = find(Logic,buildQueue);
+	display(buildObject);
 }
 
 function find(object,restQueue){
