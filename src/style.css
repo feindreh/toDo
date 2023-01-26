@@ -53,7 +53,20 @@ body{
 }
 
 /*Header*/
-
+#header{
+    display:grid;
+    grid-template-rows: 100px  1fr;
+    justify-content: center;
+}
+#escapeButton{
+    border-radius: 25px;
+    align-self: center;
+    border:solid var(--dark) 8px;
+    background-color: var(--light);
+    font-size: 25px;
+    font-weight: bold;
+    padding: 10px 50px 10px 50px;
+}
 
 /*Content*/
 

@@ -20,6 +20,7 @@ export function createNewProjectbutton(parentNode,type){
 
 export function escapeProjectButton(){
 	const Button = document.createElement("button");
+	Button.setAttribute("id","escapeButton");
 	Button.innerText = "go back";
 	Button.addEventListener("click",()=>{
 		let rootCheck = goBack();
