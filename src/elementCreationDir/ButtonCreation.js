@@ -1,8 +1,8 @@
-import Logic from "../objectDir/Logic";
+import {Logic} from "../objectDir/Logic";
 import { getValues, hide,show} from "../domFunctions/promptFunctions";
 import { createPrompt } from "./promptElement";
 import {deleteChildren, display} from "../domFunctions/toDoFunctions";
-import { projectFactory, toDoFactory } from "../objectDir/LogicFuntions";
+import { goBack, projectFactory, toDoFactory } from "../objectDir/LogicFuntions";
 
 
 export function createNewProjectbutton(parentNode,type){
@@ -19,7 +19,12 @@ export function createNewProjectbutton(parentNode,type){
 
 export function escapeProjectButton(){
 	const Button = document.createElement("button");
-	Button.innerText = "escapeProject";
+	Button.innerText = "go back";
+	Button.addEventListener("click",()=>{
+		let rootCheck = goBack();
+		if(rootCheck){alert("already in the root");}
+		
+	});
 	return Button;
 }
 
@@ -64,6 +69,7 @@ export function createDiveButton(parentNode){
 	Button.innerText = "dive into project";
 	Button.addEventListener("click",()=>{
 		display(parentNode);
+		Logic.queue.push(parentNode.id);
 	});
 	return Button;
 }

@@ -3,7 +3,7 @@ import header from "./elementCreationDir/header";
 import content from "./elementCreationDir/content";
 import makeBlackBox from "./elementCreationDir/blackBox";
 import { display } from "./domFunctions/toDoFunctions";
-import Logic from "./objectDir/Logic";
+import {Logic}from "./objectDir/Logic";
 
 
 
@@ -18,6 +18,6 @@ container.append(blackBox);
 container.append(header());
 container.append(content());
 
-Logic.queue.push("root");
+Logic.queue.push("PostIt");
 display(Logic);
 

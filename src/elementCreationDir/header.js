@@ -1,6 +1,6 @@
 
 
-import {createNewProjectbutton,escapeProjectButton,newlogButton} from "./ButtonCreation";
+import {escapeProjectButton,newlogButton} from "./ButtonCreation";
 import { divID } from "./creation";
 
 

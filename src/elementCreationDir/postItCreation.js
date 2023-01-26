@@ -1,6 +1,4 @@
 import { divClass } from "./creation";
-import { display } from "../domFunctions/toDoFunctions";
-import Logic from "../objectDir/Logic";
 import { createDiveButton } from "./ButtonCreation";
 
 export function createToDoElement(toDo){

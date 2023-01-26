@@ -1,5 +1,7 @@
-//make object
+import { display } from "../domFunctions/toDoFunctions";
+import { Logic } from "./Logic";
 
+//make object
 export function projectFactory(values){
 	let type = "project";
 	let id = `${count}`;
@@ -25,8 +27,34 @@ export function toDoFactory(values){
 	return {title,description,dueDate,priority,proxTime,type};
 }
 
-//push it to Projects
+export function goBack(){
+	const queue = Logic.queue;
+	//check if root
+	if(queue[queue.length - 1] === "PostIt"){return true;}
 
-export function addToProjects(Object,target){
-	console.log(Object,target);
+	const buildQueue = Array.from(queue);
+	buildQueue.pop();
+	buildQueue.shift();
+
+	let buildObject = find(Logic,buildQueue);
+	console.log("buildObject = ",buildObject);
+	Logic.queue.pop();
+	display(buildObject);
+	
+}
+
+function find(object,restQueue){
+
+	if(restQueue.length === 0){return object;}
+
+	const search = restQueue.shift();
+
+	for(let i = 0; i< object.Projects.length; i++){
+
+		let newObj = object.Projects[i];
+		if(newObj.id === search){
+			return find(newObj,restQueue);
+		}
+	}
+	
 }

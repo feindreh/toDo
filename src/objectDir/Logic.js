@@ -5,4 +5,4 @@ const Logic = {
 	queue:[]
 };
 
-export default Logic;
+export {Logic};
