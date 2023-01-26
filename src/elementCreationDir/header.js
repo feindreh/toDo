@@ -1,6 +1,6 @@
 
 
-import {escapeProjectButton,newlogButton} from "./ButtonCreation";
+import {newlogButton} from "./ButtonCreation";
 import { divID } from "./creation";
 
 
@@ -9,11 +9,11 @@ export default function createHeader(){
 	const header = divID("header");
 
 
-	const escapeButton = escapeProjectButton();
+
 	const logButton = newlogButton();
 	
 
-	header.append(escapeButton,logButton);
+	header.append(,logButton);
 
 	return header;
 }
