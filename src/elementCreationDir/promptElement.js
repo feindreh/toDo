@@ -1,5 +1,6 @@
 import {divID,divClass} from "./creation.js";
-import {createCloseButton, createClosePromptButton} from "./ButtonCreation";
+import {createCloseButton, createClosePromptButton, createConfirmEditButton} from "./ButtonCreation";
+import { getValues} from "../domFunctions/promptFunctions.js";
 
 function createInput(name){
 	let newInput = document.createElement("input");
@@ -46,8 +47,12 @@ export function createInputPrompt(parentNode,type){
 	return promptContainer;
 }
 
-export function createEditPrompt(){
+export function createEditPrompt(parentNode){
 	const promptContainer = createPromptLayout();
+
+	const confirmEditButton = createConfirmEditButton(parentNode);
+
+	promptContainer.append(confirmEditButton);
 
 	return promptContainer;
 }

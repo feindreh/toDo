@@ -38,7 +38,7 @@ export function createCloseButton(parentNode,type){
 
 	Button.addEventListener("click",()=>{
 
-		let values = getValues(parentNode);
+		let values = getValues();
 		let obj;
 		if(type==="toDo"){obj = toDoFactory(values);}
 		if(type==="root"||type==="project"){obj= projectFactory(values);}
@@ -86,13 +86,31 @@ export function createEditButton(parentNode){
 		show(document.querySelector("#blackBox"));
 
 		//create empty prompt (to fill it with the values of the obj the edit is called on)
-		document.querySelector("#PostIt").append(createEditPrompt());
+		document.querySelector("#PostIt").append(createEditPrompt(parentNode));
 		
 		//get the input nodes and set value to the value of parentNode (the obj the edit is called on)
 		let inputs = document.querySelector("#projectPrompt").querySelectorAll("input");
 		inputs.forEach(input => {input.value = parentNode[input.id];});
-	
-
 	});
 	return Button;
+}
+
+export function createConfirmEditButton(parentNode){
+
+	const confirmEditButton = document.createElement("button");
+	confirmEditButton.innerText = "set new Values";
+
+	confirmEditButton.addEventListener("click",()=>{
+		//parentNode takes getValue Values
+		let values = getValues();
+		for(let key in values){
+			parentNode[key] = values[key];
+		}
+		deleteChildren(document.querySelector("#PostIt"));
+		hide(document.querySelector("#blackBox"));
+		refresh();
+		showPath();
+	});
+
+	return confirmEditButton;
 }
