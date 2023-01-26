@@ -1,9 +1,9 @@
 import "./style.css";
 import header from "./elementCreationDir/header";
 import content from "./elementCreationDir/content";
-import makeBlackBox from "./elementCreationDir/blackBox";
 import { display } from "./domFunctions/toDoFunctions";
 import {Logic}from "./objectDir/Logic";
+import { makeBlackBox } from "./elementCreationDir/promptElement";
 
 
 

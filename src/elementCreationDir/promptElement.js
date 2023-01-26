@@ -40,3 +40,8 @@ export function createPrompt(parentNode,type){
 	//return the container
 	return promptContainer;
 }
+
+export function makeBlackBox(){
+	const blackBox = divID("blackBox");
+	return blackBox;
+}
