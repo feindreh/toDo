@@ -1,4 +1,4 @@
-export function getValues(parentNode){
+export function getValues(){
 	//take node return input values
 	let inputs;
 	
