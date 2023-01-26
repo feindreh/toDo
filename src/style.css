@@ -80,7 +80,7 @@ body{
 #PostIt{
     display: grid;
     gap:25px;
-    grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+    grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
     grid-auto-rows: 400px;
     background-color: var(--medium);
     padding:60px;

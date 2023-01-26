@@ -114,3 +114,44 @@ export function createConfirmEditButton(parentNode){
 
 	return confirmEditButton;
 }
+
+export function createDeleteButton(parentNode){
+	const Button = document.createElement("button");
+	Button.innerText = `Delete ${parentNode.type}`;
+	Button.addEventListener("click",() => {
+
+		const searchQueue = Array.from(Logic.queue);
+		searchQueue.shift();
+
+		recursiveFindToDelete(parentNode,searchQueue,Logic);
+	
+	});
+	return Button;
+}
+
+
+function recursiveFindToDelete(obj,queue,parent){
+	//get a better name
+	console.log("obj:",obj);
+	console.log("queue:",queue);
+
+	if(queue.length === 0){
+		for(let i = 0;i < parent.Projects.length; i++){
+			if(parent.Projects[i] === obj){
+				parent.Projects.splice(i,1);
+				refresh();
+			}
+		}
+	}
+
+	const search = queue.shift();
+
+	for(let i = 0; i< parent.Projects.length; i++){
+
+		let newObj = parent.Projects[i];
+		if(newObj.id === search){
+			return recursiveFindToDelete(obj,queue,newObj);
+		}
+	}
+
+}
