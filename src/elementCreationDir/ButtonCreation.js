@@ -3,7 +3,7 @@ import { getValues, hide,show} from "../domFunctions/promptFunctions";
 import { createPrompt } from "./promptElement";
 import {deleteChildren, display, showPath} from "../domFunctions/toDoFunctions";
 import { goBack, projectFactory, toDoFactory } from "../objectDir/LogicFuntions";
-
+import { refresh } from "../objectDir/LogicFuntions";
 
 
 export function createNewProjectbutton(parentNode,type){
@@ -63,5 +63,18 @@ export function createDiveButton(parentNode){
 		Logic.queue.push(parentNode.id);
 		display(parentNode);
 	});
+	return Button;
+}
+
+export function createClosePromptButton(){
+	const Button = document.createElement("button");
+	Button.innerText = "close";
+
+	Button.addEventListener("click", () => {
+		deleteChildren(document.querySelector("#PostIt"));
+		hide(document.querySelector("#blackBox"));
+		refresh();
+	});
+
 	return Button;
 }

@@ -1,5 +1,5 @@
 import {divID,divClass} from "./creation.js";
-import {createCloseButton} from "./ButtonCreation";
+import {createCloseButton, createClosePromptButton} from "./ButtonCreation";
 
 function createInput(name){
 	let newInput = document.createElement("input");
@@ -34,9 +34,10 @@ export function createPrompt(parentNode,type){
 	const proxTime = createInputBlock("proxTime");
 
 	const closeButton = createCloseButton(parentNode,type);
+	const closePromptButton = createClosePromptButton();
 
 	//append elements to container
-	promptContainer.append(title,description,dueDate,proxTime,closeButton);
+	promptContainer.append(title,description,dueDate,proxTime,closeButton,closePromptButton);
 	//return the container
 	return promptContainer;
 }
