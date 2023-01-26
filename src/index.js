@@ -18,6 +18,6 @@ container.append(blackBox);
 container.append(header());
 container.append(content());
 
-
+Logic.queue.push("root");
 display(Logic);
 
