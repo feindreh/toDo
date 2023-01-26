@@ -1,5 +1,6 @@
 import { divClass } from "./creation";
 import { createDiveButton } from "./ButtonCreation";
+import { refresh } from "../objectDir/LogicFuntions";
 
 export function createToDoElement(toDo){
     
@@ -33,13 +34,15 @@ export function createToDoElement(toDo){
 	const upButton = document.createElement("button");
 	upButton.innerText = "Prio Up ";
 	upButton.addEventListener(("click"),()=>{
-		console.log("up");
+		toDo.priority += 1;
+		refresh();
 	});
 
 	const downButton = document.createElement("button");
 	downButton.innerText = "Prio Down";
 	downButton.addEventListener(("click"),()=>{
-		console.log("down");
+		toDo.priority -= 1;
+		refresh();
 	});
 
 	toDoElement.append(toDoMark,header,description,proxTimeP,proxTime,dueDateP,dueDate);
