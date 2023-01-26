@@ -87,7 +87,7 @@ export function createEditButton(parentNode){
 
 		//edit prompt
 		createEditPrompt();
-
+		console.log("funtionality missing");
 		//append prompt
 		//document.querySelector("#PostIt").append();
 	});

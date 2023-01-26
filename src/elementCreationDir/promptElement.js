@@ -20,26 +20,29 @@ function createInputBlock(name){
 	block.append(label,input);
 	return block;
 }
-
-export function createInputPrompt(parentNode,type){
-	//return the prompt as node
-
-
-	//create elements
-
-	const promptContainer = divID("projectPrompt");
+function createPromptLayout(){
+	const LayoutContainer = divID("projectPrompt");
 
 	const title = createInputBlock("title");
 	const description = createInputBlock("description");
 	const dueDate = createInputBlock("dueDate");
 	const proxTime = createInputBlock("proxTime");
 
-	const closeButton = createCloseButton(parentNode,type);
 	const closePromptButton = createClosePromptButton();
 
-	//append elements to container
-	promptContainer.append(title,description,dueDate,proxTime,closeButton,closePromptButton);
-	//return the container
+	LayoutContainer.append(title,description,dueDate,proxTime,closePromptButton);
+
+	return LayoutContainer; 
+}
+export function createInputPrompt(parentNode,type){
+
+
+	const promptContainer = createPromptLayout();
+
+	const closeButton = createCloseButton(parentNode,type);
+
+	promptContainer.append(closeButton);
+
 	return promptContainer;
 }
 
