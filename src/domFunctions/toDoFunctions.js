@@ -1,5 +1,7 @@
 import { createDummyElement } from "../elementCreationDir/DummyCreation";
 import { createToDoElement } from "../elementCreationDir/postItCreation";
+import {Logic} from "../objectDir/Logic";
+import { divClass } from "../elementCreationDir/creation";
 
 
 
@@ -10,7 +12,7 @@ export function display(parentNode){
 	const children = parentNode.Projects;
 	
 	//clear content
-	deleteChildren();
+	deleteChildren(document.querySelector("#PostIt"));
 
 	//display stuff
 	for(let toDo of children){
@@ -24,12 +26,23 @@ export function display(parentNode){
 	}
 
 	document.querySelector("#PostIt").append(createDummyElement(parentNode));
+	showPath();
 
 }
 
-export function deleteChildren(){
-	const parentNode = document.querySelector("#PostIt");
+export function deleteChildren(parentNode){
+	console.log(parentNode);
 	while (parentNode.firstChild) {
 		parentNode.removeChild(parentNode.firstChild);
+	}
+}
+
+export function showPath(){
+	deleteChildren(document.querySelector("#path"));
+	const container = document.querySelector("#path");
+	for(let i = 0; i<Logic.queue.length;i++){
+		const step = divClass("path");
+		step.innerText = `${Logic.queue[i]}`;
+		container.append(step);
 	}
 }

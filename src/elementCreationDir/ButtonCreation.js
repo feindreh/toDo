@@ -1,8 +1,9 @@
 import {Logic} from "../objectDir/Logic";
 import { getValues, hide,show} from "../domFunctions/promptFunctions";
 import { createPrompt } from "./promptElement";
-import {deleteChildren, display} from "../domFunctions/toDoFunctions";
+import {deleteChildren, display, showPath} from "../domFunctions/toDoFunctions";
 import { goBack, projectFactory, toDoFactory } from "../objectDir/LogicFuntions";
+
 
 
 export function createNewProjectbutton(parentNode,type){
@@ -23,7 +24,7 @@ export function escapeProjectButton(){
 	Button.addEventListener("click",()=>{
 		let rootCheck = goBack();
 		if(rootCheck){alert("already in the root");}
-		
+		showPath();
 	});
 	return Button;
 }
@@ -54,9 +55,10 @@ export function createCloseButton(parentNode,type){
 
 		parentNode.Projects.push(obj);
 
-		deleteChildren();
+		deleteChildren(document.querySelector("#PostIt"));
 		hide(document.querySelector("#blackBox"));
 		display(parentNode);
+		showPath();
 	});
 
 
@@ -68,8 +70,8 @@ export function createDiveButton(parentNode){
 	const Button = document.createElement("button");
 	Button.innerText = "dive into project";
 	Button.addEventListener("click",()=>{
-		display(parentNode);
 		Logic.queue.push(parentNode.id);
+		display(parentNode);
 	});
 	return Button;
 }
