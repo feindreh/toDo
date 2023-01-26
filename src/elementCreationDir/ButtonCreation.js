@@ -29,17 +29,6 @@ export function escapeProjectButton(){
 	return Button;
 }
 
-export function newlogButton(){
-	const logButton = document.createElement("button");
-	logButton.type = "button";
-	logButton.id = "logButton";
-	logButton.innerText = "logButton";
-	logButton.addEventListener("click", () => {
-		console.log(Logic);
-	});
-	return logButton;
-}
-
 export function createCloseButton(parentNode,type){
 	const Button = document.createElement("button");
 	Button.setAttribute("id","closeItBaby");

@@ -31,7 +31,6 @@ export function display(parentNode){
 }
 
 export function deleteChildren(parentNode){
-	console.log(parentNode);
 	while (parentNode.firstChild) {
 		parentNode.removeChild(parentNode.firstChild);
 	}
