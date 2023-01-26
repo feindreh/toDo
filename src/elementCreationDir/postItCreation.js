@@ -5,7 +5,6 @@ import { createDiveButton } from "./ButtonCreation";
 
 export function createToDoElement(toDo){
     
-	console.log(toDo);
 	const toDoElement = divClass(`toDoContainer-${toDo.type}`);
 	
 	
