@@ -10,9 +10,10 @@ export default function createHeader(){
 
 
 	const escapeButton = escapeProjectButton();
+	const path = divID("path");
 	
 
-	header.append(escapeButton);
+	header.append(escapeButton,path);
 
 	return header;
 }
