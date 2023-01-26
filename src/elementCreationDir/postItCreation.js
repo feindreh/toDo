@@ -1,5 +1,5 @@
 import { divClass } from "./creation";
-import { createDiveButton } from "./ButtonCreation";
+import { createDiveButton, createEditButton } from "./ButtonCreation";
 import { refresh } from "../objectDir/LogicFuntions";
 
 export function createToDoElement(toDo){
@@ -45,14 +45,14 @@ export function createToDoElement(toDo){
 		refresh();
 	});
 
-	toDoElement.append(toDoMark,header,description,proxTimeP,proxTime,dueDateP,dueDate);
+	const editButton = createEditButton(toDo);
+
+	toDoElement.append(toDoMark,header,description,proxTimeP,proxTime,dueDateP,dueDate,priority,upButton,downButton,editButton);
 	
 	if(toDo.type === "project"){
 		const diveButton = createDiveButton(toDo);
 		toDoElement.append(diveButton);
 	}
-
-	toDoElement.append(priority,upButton,downButton);
 
 	return toDoElement;
 }

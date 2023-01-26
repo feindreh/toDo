@@ -20,7 +20,8 @@ function createInputBlock(name){
 	block.append(label,input);
 	return block;
 }
-export function createPrompt(parentNode,type){
+
+export function createInputPrompt(parentNode,type){
 	//return the prompt as node
 
 
@@ -40,6 +41,10 @@ export function createPrompt(parentNode,type){
 	promptContainer.append(title,description,dueDate,proxTime,closeButton,closePromptButton);
 	//return the container
 	return promptContainer;
+}
+
+export function createEditPrompt(){
+	console.log("missing functionality");
 }
 
 export function makeBlackBox(){

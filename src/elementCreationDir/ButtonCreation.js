@@ -1,6 +1,6 @@
 import {Logic} from "../objectDir/Logic";
 import { getValues, hide,show} from "../domFunctions/promptFunctions";
-import { createPrompt } from "./promptElement";
+import { createInputPrompt,createEditPrompt } from "./promptElement";
 import {deleteChildren, display, showPath} from "../domFunctions/toDoFunctions";
 import { goBack, projectFactory, toDoFactory } from "../objectDir/LogicFuntions";
 import { refresh } from "../objectDir/LogicFuntions";
@@ -12,7 +12,7 @@ export function createNewProjectbutton(parentNode,type){
 
 	Button.addEventListener("click",()=>{
 		show(document.querySelector("#blackBox"));
-		document.querySelector("#PostIt").append(createPrompt(parentNode,type));
+		document.querySelector("#PostIt").append(createInputPrompt(parentNode,type));
 	});
 
 	return Button;
@@ -76,5 +76,20 @@ export function createClosePromptButton(){
 		refresh();
 	});
 
+	return Button;
+}
+
+export function createEditButton(parentNode){
+	const Button = document.createElement("button");
+	Button.innerText = "Edit";
+	Button.addEventListener("click", () => {
+		show(document.querySelector("#blackBox"));
+
+		//edit prompt
+		createEditPrompt();
+
+		//append prompt
+		//document.querySelector("#PostIt").append();
+	});
 	return Button;
 }
