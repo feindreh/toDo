@@ -27,12 +27,29 @@ export function createToDoElement(toDo){
 	const dueDate = divClass("toDo-dueDate");
 	dueDate.innerText = `${toDo.dueDate}`;
 
+	const priority = divClass("priority");
+	priority.innerText = `Priority: ${toDo.priority}`;
+
+	const upButton = document.createElement("button");
+	upButton.innerText = "Prio Up ";
+	upButton.addEventListener(("click"),()=>{
+		console.log("up");
+	});
+
+	const downButton = document.createElement("button");
+	downButton.innerText = "Prio Down";
+	downButton.addEventListener(("click"),()=>{
+		console.log("down");
+	});
+
 	toDoElement.append(toDoMark,header,description,proxTimeP,proxTime,dueDateP,dueDate);
 	
 	if(toDo.type === "project"){
 		const diveButton = createDiveButton(toDo);
 		toDoElement.append(diveButton);
 	}
+
+	toDoElement.append(priority,upButton,downButton);
 
 	return toDoElement;
 }
