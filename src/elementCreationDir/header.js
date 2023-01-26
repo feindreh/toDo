@@ -13,7 +13,7 @@ export default function createHeader(){
 	const logButton = newlogButton();
 	
 
-	header.append(,logButton);
+	header.append(logButton);
 
 	return header;
 }
