@@ -47,7 +47,9 @@ export function createInputPrompt(parentNode,type){
 }
 
 export function createEditPrompt(){
-	console.log("missing functionality");
+	const promptContainer = createPromptLayout();
+
+	return promptContainer;
 }
 
 export function makeBlackBox(){

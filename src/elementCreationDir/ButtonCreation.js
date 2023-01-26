@@ -85,11 +85,14 @@ export function createEditButton(parentNode){
 	Button.addEventListener("click", () => {
 		show(document.querySelector("#blackBox"));
 
-		//edit prompt
-		createEditPrompt();
-		console.log("funtionality missing");
-		//append prompt
-		//document.querySelector("#PostIt").append();
+		//create empty prompt (to fill it with the values of the obj the edit is called on)
+		document.querySelector("#PostIt").append(createEditPrompt());
+		
+		//get the input nodes and set value to the value of parentNode (the obj the edit is called on)
+		let inputs = document.querySelector("#projectPrompt").querySelectorAll("input");
+		inputs.forEach(input => {input.value = parentNode[input.id];});
+	
+
 	});
 	return Button;
 }
