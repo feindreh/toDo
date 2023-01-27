@@ -41,7 +41,7 @@ export function goBack(){
 	display(buildObject);
 }
  
-function find(object,restQueue){
+export function find(object,restQueue){
 
 	if(restQueue.length === 0){return object;}
 

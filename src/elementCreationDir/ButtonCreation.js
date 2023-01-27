@@ -123,7 +123,7 @@ export function createDeleteButton(parentNode){
 		searchQueue.shift();
 
 		recursiveFindToDelete(parentNode,searchQueue,Logic);
-	
+		refresh();
 	});
 	return Button;
 }
@@ -135,7 +135,6 @@ function recursiveFindToDelete(obj,queue,parent){
 		for(let i = 0;i < parent.Projects.length; i++){
 			if(parent.Projects[i] === obj){
 				parent.Projects.splice(i,1);
-				refresh();
 			}
 		}
 	}
