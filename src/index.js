@@ -4,10 +4,19 @@ import content from "./elementCreationDir/content";
 import { display } from "./domFunctions/toDoFunctions";
 import {Logic}from "./objectDir/Logic";
 import { makeBlackBox } from "./elementCreationDir/promptElement";
-import { loadLocalStorage } from "./objectDir/localStorage";
+import { loadLocalStorage, storageAvailable } from "./objectDir/localStorage";
 
+let storage = false;
 
-if(localStorage.length){loadLocalStorage();}
+if (storageAvailable("localStorage")) {
+	storage = true;
+}
+export {storage};
+
+if(storage){
+	if(localStorage.length){loadLocalStorage();}
+}
+
 
 const container = document.querySelector("#container");
 

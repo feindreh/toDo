@@ -3,14 +3,15 @@ import { createToDoElement } from "../elementCreationDir/postItCreation";
 import {Logic} from "../objectDir/Logic";
 import { divClass } from "../elementCreationDir/creation";
 import { saveLocalStorage } from "../objectDir/localStorage";
+import { storage } from "..";
 
 
 
 export function display(parentNode){
 	// display children[array] => parentNode
-
-
-	saveLocalStorage();
+	if(storage){
+		saveLocalStorage();
+	}
 
 	parentNode.Projects.sort((a,b) => b.priority - a.priority);
 	const children = parentNode.Projects;
