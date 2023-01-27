@@ -97,5 +97,10 @@ body{
     background-color: var(--light);
     max-width: 450px;
     font-weight: bold;
+    text-align: center;
+}
+
+.toDo-Header{
+    font-size: 30px;
 }
 
