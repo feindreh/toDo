@@ -1,4 +1,4 @@
-import {Logic} from "../objectDir/Logic";
+import {deleteOldID, Logic} from "../objectDir/Logic";
 import { getValues, hide,show} from "../domFunctions/promptFunctions";
 import { createInputPrompt,createEditPrompt } from "./promptElement";
 import {deleteChildren, display, showPath,refresh} from "../domFunctions/toDoFunctions";
@@ -121,8 +121,7 @@ export function createDeleteButton(parentNode){
 		const searchQueue = Array.from(Logic.queue);
 
 		searchQueue.shift();
-
-
+		deleteOldID(parentNode.id);
 		recursiveFindToDelete(parentNode,searchQueue,Logic);
 		refresh();
 	});
@@ -132,9 +131,7 @@ export function createDeleteButton(parentNode){
 
 function recursiveFindToDelete(obj,queue,parent){
 	//get a better name
-	console.log(queue);
 	if(queue.length === 0){
-		if(parent.Projects === undefined){console.log(parent,"Projects.length undefined");}
 		for(let i = 0;i < parent.Projects.length; i++){
 			if(parent.Projects[i] === obj){
 				parent.Projects.splice(i,1);

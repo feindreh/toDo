@@ -1,14 +1,39 @@
-const Logic = {
+
+
+let Logic = {
 	Projects:[],
 	id:"PostIt",
 	type:"root",
-	queue:[]
+	queue:[],
+	ids:[],
 };
 
 export {Logic};
 
+export function getNewID(){
+
+	let NewID;
+
+	for(let i = 0; i <= Logic.ids.length;i++){
+		//search free id spot
+		if(Logic.ids[i] === undefined){NewID = i; break;}
+		if(Logic.ids[i] === ""){NewID = i; break;}
+	}
+
+	Logic.ids[NewID] = NewID;
+	return NewID;
+}
+
+export function deleteOldID(oldID){
+	//delete Old ID
+	for(let i = 0;i<Logic.ids.length;i++){
+		if(Logic.ids[i]===oldID){Logic.ids.splice(i,1);return;}
+	}
+}
+
 export function loadLocalStorage(){
-	Logic.Projects = JSON.parse(localStorage.getItem("Logic")).Projects;
+	Logic = JSON.parse(localStorage.getItem("Logic"));
+	Logic.queue = [];
 }
 
 export function saveLocalStorage(){

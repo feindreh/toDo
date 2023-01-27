@@ -10,11 +10,12 @@ let storage = false;
 if (storageAvailable("localStorage")) {
 	storage = true;
 }
-export {storage};
+
 
 if(storage){
 	if(localStorage.length){loadLocalStorage();}
 }
+
 
 
 const container = document.querySelector("#container");
@@ -30,4 +31,4 @@ container.append(content());
 Logic.queue.push("PostIt");
 display(Logic);
 
-
+export {storage};
