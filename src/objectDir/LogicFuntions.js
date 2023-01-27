@@ -41,13 +41,6 @@ export function goBack(){
 	display(buildObject);
 }
  
-export function refresh(){
-	const buildQueue = Array.from(Logic.queue);
-	buildQueue.shift();
-	let buildObject = find(Logic,buildQueue);
-	display(buildObject);
-}
-
 function find(object,restQueue){
 
 	if(restQueue.length === 0){return object;}

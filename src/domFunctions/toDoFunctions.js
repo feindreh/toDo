@@ -2,7 +2,6 @@ import { createDummyElement } from "../elementCreationDir/DummyCreation";
 import { createToDoElement } from "../elementCreationDir/postItCreation";
 import {Logic,saveLocalStorage} from "../objectDir/Logic";
 import { divClass } from "../elementCreationDir/creation";
-
 import { storage } from "..";
 
 
@@ -47,4 +46,11 @@ export function showPath(){
 		step.innerText = `${Logic.queue[i]}`;
 		container.append(step);
 	}
+}
+
+export function refresh(){
+	const buildQueue = Array.from(Logic.queue);
+	buildQueue.shift();
+	let buildObject = find(Logic,buildQueue);
+	display(buildObject);
 }

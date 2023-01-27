@@ -1,9 +1,8 @@
 import {Logic} from "../objectDir/Logic";
 import { getValues, hide,show} from "../domFunctions/promptFunctions";
 import { createInputPrompt,createEditPrompt } from "./promptElement";
-import {deleteChildren, display, showPath} from "../domFunctions/toDoFunctions";
+import {deleteChildren, display, showPath,refresh} from "../domFunctions/toDoFunctions";
 import { goBack, projectFactory, toDoFactory } from "../objectDir/LogicFuntions";
-import { refresh } from "../objectDir/LogicFuntions";
 
 
 export function createNewProjectbutton(parentNode,type){
