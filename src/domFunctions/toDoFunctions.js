@@ -1,8 +1,8 @@
 import { createDummyElement } from "../elementCreationDir/DummyCreation";
 import { createToDoElement } from "../elementCreationDir/postItCreation";
-import {Logic} from "../objectDir/Logic";
+import {Logic,saveLocalStorage} from "../objectDir/Logic";
 import { divClass } from "../elementCreationDir/creation";
-import { saveLocalStorage } from "../objectDir/localStorage";
+
 import { storage } from "..";
 
 

@@ -2,9 +2,8 @@ import "./style.css";
 import header from "./elementCreationDir/header";
 import content from "./elementCreationDir/content";
 import { display } from "./domFunctions/toDoFunctions";
-import {Logic}from "./objectDir/Logic";
+import {Logic,storageAvailable,loadLocalStorage}from "./objectDir/Logic";
 import { makeBlackBox } from "./elementCreationDir/promptElement";
-import { loadLocalStorage, storageAvailable } from "./objectDir/localStorage";
 
 let storage = false;
 
