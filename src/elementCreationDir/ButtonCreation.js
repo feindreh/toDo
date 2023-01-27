@@ -118,9 +118,10 @@ export function createDeleteButton(parentNode){
 	const Button = document.createElement("button");
 	Button.innerText = `Delete ${parentNode.type}`;
 	Button.addEventListener("click",() => {
-
 		const searchQueue = Array.from(Logic.queue);
+
 		searchQueue.shift();
+
 
 		recursiveFindToDelete(parentNode,searchQueue,Logic);
 		refresh();
@@ -131,10 +132,13 @@ export function createDeleteButton(parentNode){
 
 function recursiveFindToDelete(obj,queue,parent){
 	//get a better name
+	console.log(queue);
 	if(queue.length === 0){
+		if(parent.Projects === undefined){console.log(parent,"Projects.length undefined");}
 		for(let i = 0;i < parent.Projects.length; i++){
 			if(parent.Projects[i] === obj){
 				parent.Projects.splice(i,1);
+				return;
 			}
 		}
 	}

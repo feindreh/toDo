@@ -1,6 +1,6 @@
 import { divClass } from "./creation";
 import { createDeleteButton, createDiveButton, createEditButton } from "./ButtonCreation";
-import { refresh } from "../objectDir/LogicFuntions";
+import { refresh } from "../domFunctions/toDoFunctions";
 
 export function createToDoElement(toDo){
     
