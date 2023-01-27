@@ -2,11 +2,15 @@ import { createDummyElement } from "../elementCreationDir/DummyCreation";
 import { createToDoElement } from "../elementCreationDir/postItCreation";
 import {Logic} from "../objectDir/Logic";
 import { divClass } from "../elementCreationDir/creation";
+import { saveLocalStorage } from "../objectDir/localStorage";
 
 
 
 export function display(parentNode){
 	// display children[array] => parentNode
+
+
+	saveLocalStorage();
 
 	parentNode.Projects.sort((a,b) => b.priority - a.priority);
 	const children = parentNode.Projects;
@@ -26,7 +30,6 @@ export function display(parentNode){
 
 	document.querySelector("#PostIt").append(createDummyElement(parentNode));
 	showPath();
-
 }
 
 export function deleteChildren(parentNode){

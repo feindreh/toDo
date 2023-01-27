@@ -4,11 +4,12 @@ import content from "./elementCreationDir/content";
 import { display } from "./domFunctions/toDoFunctions";
 import {Logic}from "./objectDir/Logic";
 import { makeBlackBox } from "./elementCreationDir/promptElement";
+import { loadLocalStorage } from "./objectDir/localStorage";
 
 
+if(localStorage.length){loadLocalStorage();}
 
 const container = document.querySelector("#container");
-
 
 //append prompts
 const blackBox = makeBlackBox();
