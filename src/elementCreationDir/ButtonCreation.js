@@ -131,9 +131,6 @@ export function createDeleteButton(parentNode){
 
 function recursiveFindToDelete(obj,queue,parent){
 	//get a better name
-	console.log("obj:",obj);
-	console.log("queue:",queue);
-
 	if(queue.length === 0){
 		for(let i = 0;i < parent.Projects.length; i++){
 			if(parent.Projects[i] === obj){
