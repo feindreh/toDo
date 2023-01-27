@@ -6,7 +6,6 @@ export function createToDoElement(toDo){
     
 	const toDoElement = divClass(`toDoContainer-${toDo.type}`);
 	
-	
 	const toDoMark = divClass("toDoMark");
 	toDoMark.innerText = "To Do:";
 
@@ -28,6 +27,22 @@ export function createToDoElement(toDo){
 	const dueDate = divClass("toDo-dueDate");
 	dueDate.innerText = `${toDo.dueDate}`;
 
+
+	const postItFooter = createPostItFooter(toDo);
+
+	toDoElement.append(toDoMark,header,description,proxTimeP,proxTime,dueDateP,dueDate,postItFooter);
+	
+
+	return toDoElement;
+}
+
+function createPostItFooter(toDo){
+	//priority,upButton,downButton,editButton,deleteButton
+
+	const pFooter = divClass("pFooter");
+
+	const priorityWrap = divClass("priorityWrap");
+
 	const priority = divClass("priority");
 	priority.innerText = `Priority: ${toDo.priority}`;
 
@@ -45,17 +60,19 @@ export function createToDoElement(toDo){
 		refresh();
 	});
 
+	priorityWrap.append(priority,upButton,downButton);
+
 	const editButton = createEditButton(toDo);
 
-	//DELTE BUTTON HERE
 	const deleteButton = createDeleteButton(toDo);
 
-	toDoElement.append(toDoMark,header,description,proxTimeP,proxTime,dueDateP,dueDate,priority,upButton,downButton,editButton,deleteButton);
-	
 	if(toDo.type === "project"){
 		const diveButton = createDiveButton(toDo);
-		toDoElement.append(diveButton);
+		pFooter.append(diveButton);
 	}
 
-	return toDoElement;
+	pFooter.append(priorityWrap,editButton,deleteButton);
+
+	return pFooter;
+
 }
