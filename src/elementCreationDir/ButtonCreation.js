@@ -1,7 +1,7 @@
 import {deleteOldID, Logic} from "../objectDir/Logic";
 import { getValues, hide,show} from "../domFunctions/promptFunctions";
 import { createInputPrompt,createEditPrompt } from "./promptElement";
-import {deleteChildren, display, showPath,refresh} from "../domFunctions/toDoFunctions";
+import {deleteChildren, display,refresh} from "../domFunctions/toDoFunctions";
 import { goBack, projectFactory, toDoFactory } from "../objectDir/LogicFuntions";
 
 
@@ -24,7 +24,6 @@ export function escapeProjectButton(){
 	Button.addEventListener("click",()=>{
 		let rootCheck = goBack();
 		if(rootCheck){alert("already in the root");}
-		showPath();
 	});
 	return Button;
 }
@@ -47,7 +46,6 @@ export function createCloseButton(parentNode,type){
 		deleteChildren(document.querySelector("#PostIt"));
 		hide(document.querySelector("#blackBox"));
 		display(parentNode);
-		showPath();
 	});
 
 
@@ -108,7 +106,6 @@ export function createConfirmEditButton(parentNode){
 		deleteChildren(document.querySelector("#PostIt"));
 		hide(document.querySelector("#blackBox"));
 		refresh();
-		showPath();
 	});
 
 	return confirmEditButton;

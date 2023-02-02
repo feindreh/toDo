@@ -1,7 +1,6 @@
 import { createDummyElement } from "../elementCreationDir/DummyCreation";
 import { createToDoElement } from "../elementCreationDir/postItCreation";
 import {Logic,saveLocalStorage} from "../objectDir/Logic";
-import { divClass } from "../elementCreationDir/creation";
 import { storage } from "../index";
 import { find } from "../objectDir/LogicFuntions";
 
@@ -27,8 +26,6 @@ export function display(parentNode){
 
 	document.querySelector("#PostIt").append(createDummyElement(parentNode));
 
-	showPath();
-
 	if(storage){
 		saveLocalStorage();
 	}
@@ -37,16 +34,6 @@ export function display(parentNode){
 export function deleteChildren(parentNode){
 	while (parentNode.firstChild) {
 		parentNode.removeChild(parentNode.firstChild);
-	}
-}
-
-export function showPath(){
-	deleteChildren(document.querySelector("#path"));
-	const container = document.querySelector("#path");
-	for(let i = 0; i<Logic.queue.length;i++){
-		const step = divClass("path");
-		step.innerText = `${Logic.queue[i]}`;
-		container.append(step);
 	}
 }
 
