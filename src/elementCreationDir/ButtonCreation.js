@@ -120,10 +120,10 @@ export function createDeleteButton(parentNode){
 	Button.addEventListener("click",() => {
 		const searchQueue = Array.from(Logic.queue);
 
-		searchQueue.shift();
-		deleteOldID(parentNode.id);
-		recursiveFindToDelete(parentNode,searchQueue,Logic);
-		refresh();
+		if(confirm(`delete ${parentNode.title}?`)){searchQueue.shift();
+			deleteOldID(parentNode.id);
+			recursiveFindToDelete(parentNode,searchQueue,Logic);
+			refresh();}
 	});
 	return Button;
 }
