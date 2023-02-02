@@ -9,7 +9,6 @@ import { find } from "../objectDir/LogicFuntions";
 
 export function display(parentNode){
 	// display children[array] => parentNode
-	console.log(parentNode);
 	parentNode.Projects.sort((a,b) => b.priority - a.priority);
 	const children = parentNode.Projects;
 	//clear content
