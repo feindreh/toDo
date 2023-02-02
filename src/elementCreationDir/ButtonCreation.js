@@ -3,6 +3,7 @@ import { getValues, hide,show} from "../domFunctions/promptFunctions";
 import { createInputPrompt,createEditPrompt } from "./promptElement";
 import {deleteChildren, display,refresh} from "../domFunctions/toDoFunctions";
 import { goBack, projectFactory, toDoFactory } from "../objectDir/LogicFuntions";
+import { nextPath, previousPath } from "../objectDir/path";
 
 
 export function createNewProjectbutton(parentNode,type){
@@ -23,7 +24,9 @@ export function escapeProjectButton(){
 	Button.innerText = "go back";
 	Button.addEventListener("click",()=>{
 		let rootCheck = goBack();
-		if(rootCheck){alert("already in the root");}
+		if(rootCheck){alert("already in the root");}else{
+			previousPath();
+		}
 	});
 	return Button;
 }
@@ -57,6 +60,7 @@ export function createDiveButton(parentNode){
 	const Button = document.createElement("button");
 	Button.innerText = "dive into project";
 	Button.addEventListener("click",()=>{
+		nextPath(parentNode);
 		Logic.queue.push(parentNode.id);
 		display(parentNode);
 	});
