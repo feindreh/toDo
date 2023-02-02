@@ -90,14 +90,27 @@ body{
     border:solid 5px var(--dark);
     background-color: var(--light);
     max-width: 450px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
 }
 
 .toDoContainer-project,.shitIknow{
-    border:solid 20px var(--dark);
+    border: solid 20px var(--dark);
     background-color: var(--light);
     max-width: 450px;
     font-weight: bold;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
 }
 
 .toDo-Header{
